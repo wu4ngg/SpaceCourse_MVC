@@ -146,6 +146,7 @@
     <Content Include="Content\img\LuaGa3.png" />
     <Content Include="Content\img\RegisterBG.png" />
     <Content Include="Content\img\SpaceCourse.mp4" />
+    <Content Include="Content\script\main.js" />
     <Content Include="Content\Style\course.css" />
     <Content Include="Content\Style\responsive.css" />
     <Content Include="Content\Style\sandbox.css" />
@@ -184,7 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\script\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

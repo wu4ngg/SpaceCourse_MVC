@@ -67,7 +67,7 @@ h1 {
 .sidebar {
     width: 50%;
     height: 100%;
-    background-image: url('../img/imgLogin.gif');
+    background-image: url('../img/LoginBG.png');
     border-radius: 16px;
     background-repeat: no-repeat;
     background-size: cover;

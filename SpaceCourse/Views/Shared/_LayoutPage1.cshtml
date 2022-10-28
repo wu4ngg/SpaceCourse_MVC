@@ -42,10 +42,199 @@
                 <div id="login" class="header-item lo" onclick="loginclick()">Đăng nhập</div>
                 <div id="register" class="header-item lo" onclick="registerclick()">Đăng ký</div>
             </div>
+        </div>
+    </div>
+    <div class="register-main" id="register1">
+        <div class="register-wrap">
+            <div class="wrap-left">
+                <div class="left_img-wrap">
+                    <img src="./Content/img/RegisterBG.png">
+                </div>
+            </div>
+            <div class="wrap-right">
+                <div class="btn_close-wrapper">
+                    <i class="material-symbols-outlined btn_close" onclick="registerquit()">Close</i>
+                </div>
+                <div class="wrap-right_header">
+                    <h5>ĐĂNG KÝ</h5>
+                </div>
+                <div class="register-forms">
+                    <div class="email_form">
+                        <div class="email_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;"
+                                   class="ti-email"></i> Email:
+                            </h4>
+                        </div>
+                        <input placeholder="you@example.com" type="text" class="form_text email">
+                    </div>
+                    <div class="username_form">
+                        <div class="username_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;" class="ti-user"></i>
+                                User Name:
+                            </h4>
+                        </div>
+                        <input type="text" placeholder="Must be 4-20 characters" class="form_text">
+                    </div>
+                    <div class="passwd_form">
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-key"></i> Mật Khẩu:
+                                </h4>
+                            </div>
+                            <input style="display: block;" type="text" class="form_text password">
+                        </div>
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-unlock"></i> Nhập Lại Mật Khẩu:
+                                </h4>
+                            </div>
+                            <input style="display: block;" type="text" class="form_text repassword">
+                        </div>
+                    </div>
+                    <div class="agree_form">
+                        <div class="chkbox_container">
+                            Tôi đồng ý với <a href="#">Điều khoản</a>
+                            <input type="password" placeholder="*************">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="chkbox_container">
+                            Gửi tôi cập nhật về những khóa học của tôi.
+                            <input type="password" placeholder="*************">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="btn_wrapper">
+                            <input type="button" class="btn_createacc" value="Tạo tài khoản">
+                            <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
-            @RenderBody()
+        <div></div>
+    </div>
+    <div class="register-main" id="register1">
+        <div class="register-wrap">
+            <div class="wrap-left">
+                <div class="left_img-wrap">
+                    <img src="./src/img/RegisterBG.png">
+                </div>
+            </div>
+            <div class="wrap-right">
+                <div class="btn_close-wrapper">
+                    <i class="material-symbols-outlined btn_close" onclick="registerquit()">Close</i>
+                </div>
+                <div class="wrap-right_header">
+                    <h5>ĐĂNG KÝ</h5>
+                </div>
+                <div class="register-forms">
+                    <div class="email_form">
+                        <div class="email_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;"
+                                   class="ti-email"></i> Email:
+                            </h4>
+                        </div>
+                        <input placeholder="you@example.com" type="text" class="form_text email">
+                    </div>
+                    <div class="username_form">
+                        <div class="username_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;" class="ti-user"></i>
+                                User Name:
+                            </h4>
+                        </div>
+                        <input type="text" placeholder="Must be 4-20 characters" class="form_text">
+                    </div>
+                    <div class="passwd_form">
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-key"></i> Mật Khẩu:
+                                </h4>
+                            </div>
+                            <input style="display: block;" type="text" class="form_text password">
+                        </div>
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-unlock"></i> Nhập Lại Mật Khẩu:
+                                </h4>
+                            </div>
+                            <input style="display: block;" type="text" class="form_text repassword">
+                        </div>
+                    </div>
+                    <div class="agree_form">
+                        <div class="chkbox_container">
+                            Tôi đồng ý với <a href="#">Điều khoản</a>
+                            <input type="password" placeholder="*************">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="chkbox_container">
+                            Gửi tôi cập nhật về những khóa học của tôi.
+                            <input type="password" placeholder="*************">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="btn_wrapper">
+                            <input type="button" class="btn_createacc" value="Tạo tài khoản">
+                            <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div></div>
+    </div>
+    <!--Login-->
+    <div class="main-login">
+        <div class="searchdialog" id="sd">
+            <div class="searchdialog-contain">
+                <div class="logindialog">
+                    <div id="title">
+                        <div class="sidebar"></div>
+                        <div id="rightw">
+                            <div id="right">
+                                <div class="right-title">
+                                    <h1>Đăng nhập</h1>
+                                </div>
+                                <div class="material-symbols-outlined flex btn_close_event"
+                                     onclick="loginquit()">close</div>
+                            </div>
+                            <div id="login">
+                                <form class="frm">
+                                    <input type="email" class="inputfield" placeholder="Email hoặc SĐT"
+                                           value="">
+                                    <input type="password" class="inputfield" placeholder="Mật khẩu" value="">
+                                </form>
+                            </div>
+                            <div class="frm_login_btn">
+                                <button class="btnsubmit">Đăng Nhập</button>
+                            </div>
+                            <a href="#">Quên mật khẩu?</a>
+                            <div class="frm_login_forgot_noacc">
+
+                                <div id="noacc">
+                                    Không có tài khoản? <a class="frm_login_forgot_noacc-changeRegis">Đăng ký</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Content/script/main.js"></script>
 </body>
 </html>
