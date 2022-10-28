@@ -1,0 +1,10 @@
+@media only screen and (max-width : 1400px){
+        .main-adv_mess img{
+            width: 550px;
+        }
+}
+@media only screen and (max-width : 900px){
+    .main-adv_mess img{
+        display: none;
+    }
+}
