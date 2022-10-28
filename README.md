@@ -1,2 +1,9 @@
 # SpaceCourse_MVC
-Chỉ là 1 dự án của 4 sinh viên năm 2 đại học. NOW USING ASP.NET!
+```
+Chỉ là 1 dự án cuối kỳ của 4 SV đại học
+Tiến trình hiện tại: Đưa source vào MVC
+Mục tiêu: Hoàn thành cơ sơ dữ liệu + tính năng
+[---             ] 15%
+
+10đ nha cô ;))
+```
