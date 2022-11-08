@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SPACECOURSE_DBModelStoreContainer" CdmEntityContainer="SPACECOURSE_DBEntities">
+    <EntitySetMapping Name="BAIHOCs">
+      <EntityTypeMapping TypeName="SPACECOURSE_DBModel.BAIHOC">
+        <MappingFragment StoreEntitySet="BAIHOC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NGUOIDANG" ColumnName="NGUOIDANG" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="LUOTXEM" ColumnName="LUOTXEM" />
+          <ScalarProperty Name="NGUOIHOC" ColumnName="NGUOIHOC" />
+          <ScalarProperty Name="TIENTRINH" ColumnName="TIENTRINH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHOAHOCs">
+      <EntityTypeMapping TypeName="SPACECOURSE_DBModel.KHOAHOC">
+        <MappingFragment StoreEntitySet="KHOAHOC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NGUOIHOC" ColumnName="NGUOIHOC" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="BAIHOC" ColumnName="BAIHOC" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="TIENTRINH" ColumnName="TIENTRINH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGUOIDUNGs">
+      <EntityTypeMapping TypeName="SPACECOURSE_DBModel.NGUOIDUNG">
+        <MappingFragment StoreEntitySet="NGUOIDUNG">
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="PASSWORD_HASH" ColumnName="PASSWORD_HASH" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THANHTOANs">
+      <EntityTypeMapping TypeName="SPACECOURSE_DBModel.THANHTOAN">
+        <MappingFragment StoreEntitySet="THANHTOAN">
+          <ScalarProperty Name="USERNAMEOWNER" ColumnName="USERNAMEOWNER" />
+          <ScalarProperty Name="SOTHE" ColumnName="SOTHE" />
+          <ScalarProperty Name="LOAITHE" ColumnName="LOAITHE" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="EXPIRE" ColumnName="EXPIRE" />
+          <ScalarProperty Name="CHUTHE" ColumnName="CHUTHE" />
+          <ScalarProperty Name="ID_THANHTOAN" ColumnName="ID_THANHTOAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

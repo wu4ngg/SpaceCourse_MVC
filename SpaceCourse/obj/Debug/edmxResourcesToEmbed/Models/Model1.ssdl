@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPACECOURSE_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BAIHOC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGUOIDANG" Type="varchar" MaxLength="20" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
+    <Property Name="MOTA" Type="nvarchar" MaxLength="2000" />
+    <Property Name="LUOTXEM" Type="int" />
+    <Property Name="NGUOIHOC" Type="varchar" MaxLength="20" />
+    <Property Name="TIENTRINH" Type="int" />
+  </EntityType>
+  <EntityType Name="KHOAHOC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGUOIHOC" Type="varchar" MaxLength="20" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="100" />
+    <Property Name="BAIHOC" Type="int" />
+    <Property Name="MOTA" Type="nvarchar" MaxLength="2000" />
+    <Property Name="TIENTRINH" Type="int" />
+  </EntityType>
+  <EntityType Name="NGUOIDUNG">
+    <Key>
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="USERNAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HOTEN" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PASSWORD_HASH" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NGAYSINH" Type="date" Nullable="false" />
+    <Property Name="SDT" Type="char" MaxLength="15" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CHUCVU" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THANHTOAN">
+    <Key>
+      <PropertyRef Name="ID_THANHTOAN" />
+    </Key>
+    <Property Name="USERNAMEOWNER" Type="varchar" MaxLength="20" />
+    <Property Name="SOTHE" Type="char" MaxLength="20" />
+    <Property Name="LOAITHE" Type="int" />
+    <Property Name="CVV" Type="char" MaxLength="3" />
+    <Property Name="EXPIRE" Type="date" />
+    <Property Name="CHUTHE" Type="varchar" MaxLength="100" />
+    <Property Name="ID_THANHTOAN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="BH_FK">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="BAIHOC">
+        <PropertyRef Name="NGUOIDANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BH_NH_FK">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="BAIHOC">
+        <PropertyRef Name="NGUOIHOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KH_BH_FK">
+    <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="0..1" />
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BAIHOC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KHOAHOC">
+        <PropertyRef Name="BAIHOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KH_NH_FK">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="KHOAHOC">
+        <PropertyRef Name="NGUOIHOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TT_FK">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="USERNAMEOWNER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SPACECOURSE_DBModelStoreContainer">
+    <EntitySet Name="BAIHOC" EntityType="Self.BAIHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHOAHOC" EntityType="Self.KHOAHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="BH_FK" Association="Self.BH_FK">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="BAIHOC" EntitySet="BAIHOC" />
+    </AssociationSet>
+    <AssociationSet Name="BH_NH_FK" Association="Self.BH_NH_FK">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="BAIHOC" EntitySet="BAIHOC" />
+    </AssociationSet>
+    <AssociationSet Name="KH_BH_FK" Association="Self.KH_BH_FK">
+      <End Role="BAIHOC" EntitySet="BAIHOC" />
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+    </AssociationSet>
+    <AssociationSet Name="KH_NH_FK" Association="Self.KH_NH_FK">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+    </AssociationSet>
+    <AssociationSet Name="TT_FK" Association="Self.TT_FK">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="THANHTOAN" EntitySet="THANHTOAN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

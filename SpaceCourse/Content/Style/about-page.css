@@ -1,0 +1,14 @@
+body{
+    background: linear-gradient(180.61deg, rgba(114, 170, 254, 0.25) -6.97%, #FFFFFF 99.47%);
+    color: black;
+
+}
+.body_about h1{
+    color: black;
+}
+.body_about{
+    padding: 250px 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
