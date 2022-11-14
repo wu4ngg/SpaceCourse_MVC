@@ -1,17 +1,16 @@
 ﻿
 @{
-    ViewBag.Title = "FrontEnd";
-    Layout = "~/Views/Shared/_LayoutKhac.cshtml";
+    ViewBag.Title = "BackEnd";
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
 }
-
-<link href="~/Content/Style/course.css" rel="stylesheet" />
+<link href="~/Content/Style/course_backend.css" rel="stylesheet" />
 <div class="main_course-body">
     <div class="main_course-body_clone">
         <div class="body-course">
             <h1>Các khóa học dài hạn miễn phí</h1>
             <div class="course_type">
-                <p id="front">Front-end</p>
-                <a id="back" href="/Courses/BackEnd">Back-end</a>
+                <a id="front" href="/Courses/FrontEnd">Front-end</a>
+                <p id="back"><b>Back-end</b></p>
             </div>
             <div class="course_planets-center">
                 <div class="course_planets-wrapper">
@@ -22,7 +21,7 @@
                                 <div class="course_popup">
                                     <div class="course_popup-box">
                                         <img class="popup-box_video"
-                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif">
+                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif"></img>
                                         <div class="popup-box_wrap">
                                             <div class="popup-box-lesson">
                                                 <i style="margin-right: 10px;"
@@ -52,14 +51,14 @@
                                     class="planet2 course-rocket_box box_roket1" alt="planet"
                                     onmousemove="HoverShow(this)" onmouseout="HoverHide(this)"> -->
                                 </div>
-                                <div class="wrap-course box_roket1" onmouseover="HoverShow(this)" onmouseout="HoverHide(this)">
+                                <div class="wrap-course box_roket1 course_java" onmouseover="HoverShow(this)" onmouseout="HoverHide(this)">
                                     <div class="rocket-wrapper roketjs">
                                         <div class="course-rocket">
                                             <img src="./src/img/plane-icon.webp" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <p>Javascript</p>
+                                <p>Java</p>
                             </div>
                         </div>
                     </div>
@@ -70,7 +69,7 @@
                                 <div class="course_popup">
                                     <div class="course_popup-box1">
                                         <img class="popup-box_video"
-                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif">
+                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif"></img>
                                         <div class="popup-box_wrap">
                                             <div class="popup-box-lesson">
                                                 <i style="margin-right: 10px;"
@@ -107,7 +106,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p>HTML</p>
+                                <p>C#</p>
                             </div>
                         </div>
                         <div id="planet2">
@@ -116,7 +115,7 @@
                                 <div class="course_popup">
                                     <div class="course_popup-box2">
                                         <img class="popup-box_video"
-                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif">
+                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif"></img>
                                         <div class="popup-box_wrap">
                                             <div class="popup-box-lesson">
                                                 <i style="margin-right: 10px;"
@@ -153,7 +152,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p>CSS</p>
+                                <p>GoLang</p>
                             </div>
                         </div>
                     </div>
@@ -164,7 +163,7 @@
                                 <div class="course_popup">
                                     <div class="course_popup-box3">
                                         <img class="popup-box_video"
-                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif">
+                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif"></img>
                                         <div class="popup-box_wrap">
                                             <div class="popup-box-lesson">
                                                 <i style="margin-right: 10px;"
@@ -197,11 +196,153 @@
                                 <div class="wrap-course box_roket4 course_wapi" onmouseover="HoverShow(this)" onmouseout="HoverHide(this)">
                                     <div class="rocket-wrapper roketapi">
                                         <div class="course-rocket">
-                                            <img src="~/Content/img/plane-icon.webp" alt="">
+                                            <img src="./src/img/plane-icon.webp" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <p>WEB API</p>
+                                <p>Python</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course_planet-group">
+                        <div id="planet2">
+                            <div class="planet2_wrap" onmousemove="HoverShowCourse(4)"
+                                 onmouseout="HoverHideCourse(4)">
+                                <div class="course_popup">
+                                    <div class="course_popup-box4">
+                                        <img class="popup-box_video"
+                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif"></img>
+                                        <div class="popup-box_wrap">
+                                            <div class="popup-box-lesson">
+                                                <i style="margin-right: 10px;"
+                                                   class="fas fa-code"></i><span>37 lessons</span>
+                                            </div>
+                                            <div class="popup-box_time">
+                                                <i style="margin-right: 10px;"
+                                                   class="fas fa-clock"></i><span>9 hrs 43 mins</span>
+                                            </div>
+                                        </div>
+                                        <div class="popup-box_descript">
+                                            <p>
+                                                JavaScript là ngôn ngữ lập trình website phổ biến hiện nay, nó được
+                                                tích hợp và nhúng vào HTML giúp website trở nên sống động hơn.
+                                                JavaScript đóng vai trò như là một phần của trang web, thực thi cho
+                                                phép Client-side script từ phía người dùng cũng như phía máy chủ
+                                                (Nodejs).
+                                            </p>
+                                        </div>
+                                        <div class="popup-box_footer">
+                                            <div class="box_footer-btn"><button>Start course</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrap_img-planet">
+                                    <!-- <img src="./src/img/planets/planet-js.svg"
+                                    class="planet2 course-rocket_box box_roket1" alt="planet"
+                                    onmousemove="HoverShow(this)" onmouseout="HoverHide(this)"> -->
+                                </div>
+                                <div class="wrap-course box_roket5 course_ruby" onmouseover="HoverShow(this)" onmouseout="HoverHide(this)">
+                                    <div class="rocket-wrapper roketruby">
+                                        <div class="course-rocket">
+                                            <img src="./src/img/plane-icon.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Ruby</p>
+                            </div>
+                        </div>
+                        <div id="planet2">
+                            <div class="planet2_wrap" onmousemove="HoverShowCourse(5)"
+                                 onmouseout="HoverHideCourse(5)">
+                                <div class="course_popup">
+                                    <div class="course_popup-box5">
+                                        <img class="popup-box_video"
+                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif"></img>
+                                        <div class="popup-box_wrap">
+                                            <div class="popup-box-lesson">
+                                                <i style="margin-right: 10px;"
+                                                   class="fas fa-code"></i><span>37 lessons</span>
+                                            </div>
+                                            <div class="popup-box_time">
+                                                <i style="margin-right: 10px;"
+                                                   class="fas fa-clock"></i><span>9 hrs 43 mins</span>
+                                            </div>
+                                        </div>
+                                        <div class="popup-box_descript">
+                                            <p>
+                                                JavaScript là ngôn ngữ lập trình website phổ biến hiện nay, nó được
+                                                tích hợp và nhúng vào HTML giúp website trở nên sống động hơn.
+                                                JavaScript đóng vai trò như là một phần của trang web, thực thi cho
+                                                phép Client-side script từ phía người dùng cũng như phía máy chủ
+                                                (Nodejs).
+                                            </p>
+                                        </div>
+                                        <div class="popup-box_footer">
+                                            <div class="box_footer-btn"><button>Start course</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrap_img-planet">
+                                    <!-- <img src="./src/img/planets/planet-js.svg"
+                                    class="planet2 course-rocket_box box_roket1" alt="planet"
+                                    onmousemove="HoverShow(this)" onmouseout="HoverHide(this)"> -->
+                                </div>
+                                <div class="wrap-course box_roket6 course_linux" onmouseover="HoverShow(this)" onmouseout="HoverHide(this)">
+                                    <div class="rocket-wrapper roketlinux">
+                                        <div class="course-rocket">
+                                            <img src="./src/img/plane-icon.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Linux</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course_planet-group">
+                        <div id="planet2">
+                            <div class="planet2_wrap" onmouseover="HoverShowCourse(6)"
+                                 onmouseout="HoverHideCourse(6)">
+                                <div class="course_popup">
+                                    <div class="course_popup-box6">
+                                        <img class="popup-box_video"
+                                             src="https://raw.githubusercontent.com/axilleasiv/vscode-javascript-repl-docs/master/vscode-javascript-repl.gif"></img>
+                                        <div class="popup-box_wrap">
+                                            <div class="popup-box-lesson">
+                                                <i style="margin-right: 10px;"
+                                                   class="fas fa-code"></i><span>37 lessons</span>
+                                            </div>
+                                            <div class="popup-box_time">
+                                                <i style="margin-right: 10px;"
+                                                   class="fas fa-clock"></i><span>9 hrs 43 mins</span>
+                                            </div>
+                                        </div>
+                                        <div class="popup-box_descript">
+                                            <p>
+                                                JavaScript là ngôn ngữ lập trình website phổ biến hiện nay, nó được
+                                                tích hợp và nhúng vào HTML giúp website trở nên sống động hơn.
+                                                JavaScript đóng vai trò như là một phần của trang web, thực thi cho
+                                                phép Client-side script từ phía người dùng cũng như phía máy chủ
+                                                (Nodejs).
+                                            </p>
+                                        </div>
+                                        <div class="popup-box_footer">
+                                            <div class="box_footer-btn"><button>Start course</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrap_img-planet">
+                                    <!-- <img src="./src/img/planets/planet-js.svg"
+                                    class="planet2 course-rocket_box box_roket1" alt="planet"
+                                    onmousemove="HoverShow(this)" onmouseout="HoverHide(this)"> -->
+                                </div>
+                                <div class="wrap-course box_roket7 course_sql" onmouseover="HoverShow(this)" onmouseout="HoverHide(this)">
+                                    <div class="rocket-wrapper roketsql">
+                                        <div class="course-rocket">
+                                            <img src="./src/img/plane-icon.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>SQL</p>
                             </div>
                         </div>
                     </div>
@@ -260,4 +401,5 @@
         </div>
     </div>
 </div>
+<script src="~/Content/script/main.js"></script>
 <script src="~/Content/script/info.js"></script>

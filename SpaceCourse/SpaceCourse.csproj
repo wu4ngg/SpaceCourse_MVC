@@ -196,6 +196,7 @@
     <Content Include="Content\script\main.js" />
     <Content Include="Content\Style\about-page.css" />
     <Content Include="Content\Style\course.css" />
+    <Content Include="Content\Style\course_backend.css" />
     <Content Include="Content\Style\responsive.css" />
     <Content Include="Content\Style\sandbox.css" />
     <Content Include="Content\Style\style.css" />
@@ -254,6 +255,7 @@
     <Content Include="Views\Courses\Home.cshtml" />
     <Content Include="Views\Shared\_LayoutNoFooter.cshtml" />
     <Content Include="Views\Courses\FrontEnd.cshtml" />
+    <Content Include="Views\Courses\BackEnd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,6 +8,10 @@ namespace SpaceCourse.Controllers
 {
     public class CoursesController : Controller
     {
+        public ActionResult BackEnd()
+        {
+            return View();
+        }
         // GET: Courses
         public ActionResult FrontEnd()
         {
