@@ -192,6 +192,7 @@
     <Content Include="Content\img\planets\WAPI.svg" />
     <Content Include="Content\img\RegisterBG.png" />
     <Content Include="Content\img\SpaceCourse.mp4" />
+    <Content Include="Content\script\info.js" />
     <Content Include="Content\script\main.js" />
     <Content Include="Content\Style\about-page.css" />
     <Content Include="Content\Style\course.css" />
@@ -222,6 +223,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\img\plane-icon.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
