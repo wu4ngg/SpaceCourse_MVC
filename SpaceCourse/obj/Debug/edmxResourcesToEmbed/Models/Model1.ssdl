@@ -5,85 +5,146 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NGUOIDANG" Type="varchar" MaxLength="20" />
-    <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
-    <Property Name="MOTA" Type="nvarchar" MaxLength="2000" />
+    <Property Name="KHAHOC" Type="int" />
+    <Property Name="VID_NAME" Type="nvarchar" MaxLength="256" />
+    <Property Name="VID_DESC" Type="nvarchar" MaxLength="2048" />
+    <Property Name="VID_SRC" Type="varchar" MaxLength="1024" />
     <Property Name="LUOTXEM" Type="int" />
-    <Property Name="NGUOIHOC" Type="varchar" MaxLength="20" />
-    <Property Name="TIENTRINH" Type="int" />
+  </EntityType>
+  <EntityType Name="COMMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGUOIDANG" Type="varchar" MaxLength="50" />
+    <Property Name="VIDEO" Type="int" />
+    <Property Name="NOIDUNG" Type="nvarchar" MaxLength="1024" />
+  </EntityType>
+  <EntityType Name="FORUM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGUOIDANG" Type="varchar" MaxLength="50" />
+    <Property Name="KHOAHOC" Type="int" />
+    <Property Name="POST_TITLE" Type="nvarchar" MaxLength="256" />
+    <Property Name="POST_CONTENT" Type="nvarchar" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="FORUM_REPLY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGUOIDANG" Type="varchar" MaxLength="50" />
+    <Property Name="TOPIC" Type="int" />
+    <Property Name="POST_TITLE" Type="nvarchar" MaxLength="256" />
+    <Property Name="POST_CONTENT" Type="nvarchar" MaxLength="2048" />
   </EntityType>
   <EntityType Name="KHOAHOC">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NGUOIHOC" Type="varchar" MaxLength="20" />
-    <Property Name="TEN" Type="nvarchar" MaxLength="100" />
-    <Property Name="BAIHOC" Type="int" />
-    <Property Name="MOTA" Type="nvarchar" MaxLength="2000" />
-    <Property Name="TIENTRINH" Type="int" />
+    <Property Name="NGUOIHOC" Type="varchar" MaxLength="50" />
+    <Property Name="COURSE_NAME" Type="nvarchar" MaxLength="256" />
+    <Property Name="COURSE_DESC" Type="nvarchar" MaxLength="2048" />
+    <Property Name="IMG_SRC" Type="varchar" MaxLength="1024" />
+    <Property Name="ACCENT_COLOR" Type="char" MaxLength="7" />
   </EntityType>
   <EntityType Name="NGUOIDUNG">
     <Key>
       <PropertyRef Name="USERNAME" />
     </Key>
-    <Property Name="USERNAME" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="HOTEN" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="PASSWORD_HASH" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="NGAYSINH" Type="date" Nullable="false" />
-    <Property Name="SDT" Type="char" MaxLength="15" />
-    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="CHUCVU" Type="int" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+    <Property Name="PASSWD" Type="varchar" MaxLength="100" />
+    <Property Name="PROFILEPIC" Type="varchar" MaxLength="1024" />
+    <Property Name="PREMIUM" Type="int" />
   </EntityType>
   <EntityType Name="THANHTOAN">
     <Key>
-      <PropertyRef Name="ID_THANHTOAN" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="USERNAMEOWNER" Type="varchar" MaxLength="20" />
-    <Property Name="SOTHE" Type="char" MaxLength="20" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" />
     <Property Name="LOAITHE" Type="int" />
-    <Property Name="CVV" Type="char" MaxLength="3" />
+    <Property Name="SOTHE" Type="varchar" MaxLength="16" />
+    <Property Name="CVC" Type="char" MaxLength="3" />
     <Property Name="EXPIRE" Type="date" />
-    <Property Name="CHUTHE" Type="varchar" MaxLength="100" />
-    <Property Name="ID_THANHTOAN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
-  <Association Name="BH_FK">
-    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+  <Association Name="FK_BH">
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="0..1" />
     <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="NGUOIDUNG">
-        <PropertyRef Name="USERNAME" />
+      <Principal Role="KHOAHOC">
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="BAIHOC">
-        <PropertyRef Name="NGUOIDANG" />
+        <PropertyRef Name="KHAHOC" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="BH_NH_FK">
-    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
-    <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NGUOIDUNG">
-        <PropertyRef Name="USERNAME" />
-      </Principal>
-      <Dependent Role="BAIHOC">
-        <PropertyRef Name="NGUOIHOC" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="KH_BH_FK">
+  <Association Name="FK_CMT">
     <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="0..1" />
-    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+    <End Role="COMMENT" Type="Self.COMMENT" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BAIHOC">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="KHOAHOC">
-        <PropertyRef Name="BAIHOC" />
+      <Dependent Role="COMMENT">
+        <PropertyRef Name="VIDEO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="KH_NH_FK">
+  <Association Name="FK_FR">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="FORUM" Type="Self.FORUM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="FORUM">
+        <PropertyRef Name="NGUOIDANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FR_T">
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="0..1" />
+    <End Role="FORUM" Type="Self.FORUM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOAHOC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FORUM">
+        <PropertyRef Name="KHOAHOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FRE">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="FORUM_REPLY" Type="Self.FORUM_REPLY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="FORUM_REPLY">
+        <PropertyRef Name="NGUOIDANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FRE_TP">
+    <End Role="FORUM" Type="Self.FORUM" Multiplicity="0..1" />
+    <End Role="FORUM_REPLY" Type="Self.FORUM_REPLY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FORUM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FORUM_REPLY">
+        <PropertyRef Name="TOPIC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KH">
     <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
     <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
     <ReferentialConstraint>
@@ -95,7 +156,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TT_FK">
+  <Association Name="FK_ND">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="COMMENT" Type="Self.COMMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="COMMENT">
+        <PropertyRef Name="NGUOIDANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TT">
     <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
     <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
     <ReferentialConstraint>
@@ -103,32 +176,51 @@
         <PropertyRef Name="USERNAME" />
       </Principal>
       <Dependent Role="THANHTOAN">
-        <PropertyRef Name="USERNAMEOWNER" />
+        <PropertyRef Name="USERNAME" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SPACECOURSE_DBModelStoreContainer">
     <EntitySet Name="BAIHOC" EntityType="Self.BAIHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMMENT" EntityType="Self.COMMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FORUM" EntityType="Self.FORUM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FORUM_REPLY" EntityType="Self.FORUM_REPLY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHOAHOC" EntityType="Self.KHOAHOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="BH_FK" Association="Self.BH_FK">
-      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+    <AssociationSet Name="FK_BH" Association="Self.FK_BH">
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
       <End Role="BAIHOC" EntitySet="BAIHOC" />
     </AssociationSet>
-    <AssociationSet Name="BH_NH_FK" Association="Self.BH_NH_FK">
-      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+    <AssociationSet Name="FK_CMT" Association="Self.FK_CMT">
       <End Role="BAIHOC" EntitySet="BAIHOC" />
+      <End Role="COMMENT" EntitySet="COMMENT" />
     </AssociationSet>
-    <AssociationSet Name="KH_BH_FK" Association="Self.KH_BH_FK">
-      <End Role="BAIHOC" EntitySet="BAIHOC" />
+    <AssociationSet Name="FK_FR" Association="Self.FK_FR">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="FORUM" EntitySet="FORUM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FR_T" Association="Self.FK_FR_T">
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+      <End Role="FORUM" EntitySet="FORUM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FRE" Association="Self.FK_FRE">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="FORUM_REPLY" EntitySet="FORUM_REPLY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FRE_TP" Association="Self.FK_FRE_TP">
+      <End Role="FORUM" EntitySet="FORUM" />
+      <End Role="FORUM_REPLY" EntitySet="FORUM_REPLY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KH" Association="Self.FK_KH">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
       <End Role="KHOAHOC" EntitySet="KHOAHOC" />
     </AssociationSet>
-    <AssociationSet Name="KH_NH_FK" Association="Self.KH_NH_FK">
+    <AssociationSet Name="FK_ND" Association="Self.FK_ND">
       <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
-      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+      <End Role="COMMENT" EntitySet="COMMENT" />
     </AssociationSet>
-    <AssociationSet Name="TT_FK" Association="Self.TT_FK">
+    <AssociationSet Name="FK_TT" Association="Self.FK_TT">
       <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
       <End Role="THANHTOAN" EntitySet="THANHTOAN" />
     </AssociationSet>

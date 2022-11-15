@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SpaceCourse.Models.NGUOIDUNG>
+
+@{
+    ViewBag.Title = "test";
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
+}
+
+<h2>test</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PASSWD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROFILEPIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PREMIUM)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PASSWD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROFILEPIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PREMIUM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

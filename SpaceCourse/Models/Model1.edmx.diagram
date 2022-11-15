@@ -4,16 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e3f0a01bc4fc47aa8bcc0c49ce00c631" Name="Diagram1">
-        <EntityTypeShape EntityType="SPACECOURSE_DBModel.BAIHOC" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPACECOURSE_DBModel.KHOAHOC" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPACECOURSE_DBModel.NGUOIDUNG" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPACECOURSE_DBModel.THANHTOAN" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.BH_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.BH_NH_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.KH_BH_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.KH_NH_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.TT_FK" ManuallyRouted="false" />
+      <Diagram DiagramId="f51251a0b3414fee8bc443e481cb58c1" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="SPACECOURSE_DBModel.BAIHOC" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPACECOURSE_DBModel.COMMENT" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPACECOURSE_DBModel.FORUM" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPACECOURSE_DBModel.FORUM_REPLY" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPACECOURSE_DBModel.KHOAHOC" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPACECOURSE_DBModel.NGUOIDUNG" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPACECOURSE_DBModel.THANHTOAN" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_BH" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_CMT" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_ND" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_FR" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_FR_T" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_FRE_TP" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_FRE" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_KH" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK_TT" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,91 @@
+﻿@model SpaceCourse.Models.NGUOIDUNG
+
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
+}
+<div class="register-main visible" id="register1">
+    <div class="register-wrap">
+        <div class="wrap-left">
+            <div class="left_img-wrap">
+                <div class="left_img-desc">
+                    <h1>Chào mừng đến với SpaceCourse.</h1>
+                    <p>Đăng ký để</p>
+                    <ul>
+                        <li>Nhận được các cập nhật khóa học</li>
+                        <li>Mua và lưu khóa học</li>
+                        <li>Nhận gói Premium miễn phí 3 tháng.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-right">
+            @using (Html.BeginForm("Main", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="register-forms">
+                    <div class="email_form">
+                        <div class="email_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;"
+                                   class="ti-email"></i> Email:
+                            </h4>
+                        </div>
+                        @Html.TextBoxFor(m => m.EMAIL, new { @class = "form_text" })
+                    </div>
+                    <div class="username_form">
+                        <div class="username_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;" class="ti-user"></i>
+                                User Name:
+                            </h4>
+                        </div>
+                        @Html.TextBoxFor(m => m.USERNAME, new { @class = "form_text" })
+                        @ViewBag.ErrMsg
+                    </div>
+                    <div class="passwd_form">
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-key"></i> Mật Khẩu:
+                                </h4>
+                            </div>
+                            @Html.PasswordFor(m => m.PASSWD, new { @class = "form_text" })
+                        </div>
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-unlock"></i> Nhập Lại Mật Khẩu:
+                                </h4>
+                            </div>
+                            <input style="display: block;" type="text" class="form_text repassword">
+                        </div>
+                    </div>
+                    <div class="agree_form">
+                        <div class="chkbox_container">
+                            Tôi đồng ý với <a href="#">Điều khoản</a>
+                            <input type="password" placeholder="*************">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="chkbox_container">
+                            Gửi tôi cập nhật về những khóa học của tôi.
+                            <input type="password" placeholder="*************">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="btn_wrapper">
+                            <div>
+                                <input type="submit" class="btn_createacc" value="Register">
+                                <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div></div>
+</div>
+
+

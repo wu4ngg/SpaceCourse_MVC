@@ -12,23 +12,21 @@ namespace SpaceCourse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KHOAHOC
+    public partial class FORUM
     {
-        public KHOAHOC()
+        public FORUM()
         {
-            this.BAIHOCs = new HashSet<BAIHOC>();
-            this.Fora = new HashSet<FORUM>();
+            this.FORUM_REPLY = new HashSet<FORUM_REPLY>();
         }
     
         public int ID { get; set; }
-        public string NGUOIHOC { get; set; }
-        public string COURSE_NAME { get; set; }
-        public string COURSE_DESC { get; set; }
-        public string IMG_SRC { get; set; }
-        public string ACCENT_COLOR { get; set; }
+        public string NGUOIDANG { get; set; }
+        public Nullable<int> KHOAHOC { get; set; }
+        public string POST_TITLE { get; set; }
+        public string POST_CONTENT { get; set; }
     
-        public virtual ICollection<BAIHOC> BAIHOCs { get; set; }
-        public virtual ICollection<FORUM> Fora { get; set; }
         public virtual NGUOIDUNG NGUOIDUNG { get; set; }
+        public virtual KHOAHOC KHOAHOC1 { get; set; }
+        public virtual ICollection<FORUM_REPLY> FORUM_REPLY { get; set; }
     }
 }

@@ -16,19 +16,17 @@ namespace SpaceCourse.Models
     {
         public BAIHOC()
         {
-            this.KHOAHOCs = new HashSet<KHOAHOC>();
+            this.COMMENTs = new HashSet<COMMENT>();
         }
     
         public int ID { get; set; }
-        public string NGUOIDANG { get; set; }
-        public string TITLE { get; set; }
-        public string MOTA { get; set; }
+        public Nullable<int> KHAHOC { get; set; }
+        public string VID_NAME { get; set; }
+        public string VID_DESC { get; set; }
+        public string VID_SRC { get; set; }
         public Nullable<int> LUOTXEM { get; set; }
-        public string NGUOIHOC { get; set; }
-        public Nullable<int> TIENTRINH { get; set; }
     
-        public virtual NGUOIDUNG NGUOIDUNG { get; set; }
-        public virtual NGUOIDUNG NGUOIDUNG1 { get; set; }
-        public virtual ICollection<KHOAHOC> KHOAHOCs { get; set; }
+        public virtual KHOAHOC KHOAHOC { get; set; }
+        public virtual ICollection<COMMENT> COMMENTs { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace SpaceCourse.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SPACECOURSE_DBEntities : DbContext
+    public partial class SPACECOURSE_DB : DbContext
     {
-        public SPACECOURSE_DBEntities()
-            : base("name=SPACECOURSE_DBEntities")
+        public SPACECOURSE_DB()
+            : base("name=SPACECOURSE_DB")
         {
         }
     
@@ -26,6 +26,9 @@ namespace SpaceCourse.Models
         }
     
         public DbSet<BAIHOC> BAIHOCs { get; set; }
+        public DbSet<COMMENT> COMMENTs { get; set; }
+        public DbSet<FORUM> Fora { get; set; }
+        public DbSet<FORUM_REPLY> FORUM_REPLY { get; set; }
         public DbSet<KHOAHOC> KHOAHOCs { get; set; }
         public DbSet<NGUOIDUNG> NGUOIDUNGs { get; set; }
         public DbSet<THANHTOAN> THANHTOANs { get; set; }

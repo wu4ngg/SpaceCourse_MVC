@@ -1,16 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SPACECOURSE_DBModelStoreContainer" CdmEntityContainer="SPACECOURSE_DBEntities">
+  <EntityContainerMapping StorageEntityContainer="SPACECOURSE_DBModelStoreContainer" CdmEntityContainer="SPACECOURSE_DB">
     <EntitySetMapping Name="BAIHOCs">
       <EntityTypeMapping TypeName="SPACECOURSE_DBModel.BAIHOC">
         <MappingFragment StoreEntitySet="BAIHOC">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="NGUOIDANG" ColumnName="NGUOIDANG" />
-          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
-          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="KHAHOC" ColumnName="KHAHOC" />
+          <ScalarProperty Name="VID_NAME" ColumnName="VID_NAME" />
+          <ScalarProperty Name="VID_DESC" ColumnName="VID_DESC" />
+          <ScalarProperty Name="VID_SRC" ColumnName="VID_SRC" />
           <ScalarProperty Name="LUOTXEM" ColumnName="LUOTXEM" />
-          <ScalarProperty Name="NGUOIHOC" ColumnName="NGUOIHOC" />
-          <ScalarProperty Name="TIENTRINH" ColumnName="TIENTRINH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMENTs">
+      <EntityTypeMapping TypeName="SPACECOURSE_DBModel.COMMENT">
+        <MappingFragment StoreEntitySet="COMMENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NGUOIDANG" ColumnName="NGUOIDANG" />
+          <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+          <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fora">
+      <EntityTypeMapping TypeName="SPACECOURSE_DBModel.FORUM">
+        <MappingFragment StoreEntitySet="FORUM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NGUOIDANG" ColumnName="NGUOIDANG" />
+          <ScalarProperty Name="KHOAHOC" ColumnName="KHOAHOC" />
+          <ScalarProperty Name="POST_TITLE" ColumnName="POST_TITLE" />
+          <ScalarProperty Name="POST_CONTENT" ColumnName="POST_CONTENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORUM_REPLY">
+      <EntityTypeMapping TypeName="SPACECOURSE_DBModel.FORUM_REPLY">
+        <MappingFragment StoreEntitySet="FORUM_REPLY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NGUOIDANG" ColumnName="NGUOIDANG" />
+          <ScalarProperty Name="TOPIC" ColumnName="TOPIC" />
+          <ScalarProperty Name="POST_TITLE" ColumnName="POST_TITLE" />
+          <ScalarProperty Name="POST_CONTENT" ColumnName="POST_CONTENT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -19,10 +50,10 @@
         <MappingFragment StoreEntitySet="KHOAHOC">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NGUOIHOC" ColumnName="NGUOIHOC" />
-          <ScalarProperty Name="TEN" ColumnName="TEN" />
-          <ScalarProperty Name="BAIHOC" ColumnName="BAIHOC" />
-          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
-          <ScalarProperty Name="TIENTRINH" ColumnName="TIENTRINH" />
+          <ScalarProperty Name="COURSE_NAME" ColumnName="COURSE_NAME" />
+          <ScalarProperty Name="COURSE_DESC" ColumnName="COURSE_DESC" />
+          <ScalarProperty Name="IMG_SRC" ColumnName="IMG_SRC" />
+          <ScalarProperty Name="ACCENT_COLOR" ColumnName="ACCENT_COLOR" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -30,25 +61,22 @@
       <EntityTypeMapping TypeName="SPACECOURSE_DBModel.NGUOIDUNG">
         <MappingFragment StoreEntitySet="NGUOIDUNG">
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
-          <ScalarProperty Name="PASSWORD_HASH" ColumnName="PASSWORD_HASH" />
-          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-          <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+          <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+          <ScalarProperty Name="PROFILEPIC" ColumnName="PROFILEPIC" />
+          <ScalarProperty Name="PREMIUM" ColumnName="PREMIUM" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="THANHTOANs">
       <EntityTypeMapping TypeName="SPACECOURSE_DBModel.THANHTOAN">
         <MappingFragment StoreEntitySet="THANHTOAN">
-          <ScalarProperty Name="USERNAMEOWNER" ColumnName="USERNAMEOWNER" />
-          <ScalarProperty Name="SOTHE" ColumnName="SOTHE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="LOAITHE" ColumnName="LOAITHE" />
-          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="SOTHE" ColumnName="SOTHE" />
+          <ScalarProperty Name="CVC" ColumnName="CVC" />
           <ScalarProperty Name="EXPIRE" ColumnName="EXPIRE" />
-          <ScalarProperty Name="CHUTHE" ColumnName="CHUTHE" />
-          <ScalarProperty Name="ID_THANHTOAN" ColumnName="ID_THANHTOAN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

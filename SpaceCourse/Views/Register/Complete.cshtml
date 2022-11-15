@@ -1,0 +1,111 @@
+﻿@model SpaceCourse.Models.NGUOIDUNG
+
+@{
+    ViewBag.Title = "Complete";
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
+}
+
+<style>
+    .register-main {
+        animation: none;
+        backdrop-filter: blur(100px);
+    }
+
+    .register-wrap {
+        animation: none;
+    }
+
+    .wrap-right {
+        text-align: center;
+    }
+
+    #main, #pfp {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .wrap-right button {
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: 4px #7299FE solid;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+
+    #pfp {
+        display: none;
+    }
+
+    .visible {
+        display: flex;
+    }
+
+    #pfp img {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    #pfp label:hover img{
+        filter: brightness(50%);
+    }
+    #pfp label:hover {
+        
+    }
+</style>
+
+<div class="register-main visible" id="register1">
+    <div class="register-wrap">
+        <div class="wrap-right">
+            <div class="visible" id="main">
+                <img src="~/Content/img/check_circle_black_24dp.svg" width="64" />
+                <div>
+                    <h2>Chào mừng @Html.DisplayFor(m => m.USERNAME) đến với SPACECOURSE!</h2>
+                    <p>Chỉ còn vài bước nữa là bạn có thể hoàn thành quá trình tạo tài khoản.</p>
+                </div>
+                <button onclick="Switch('main', 'pfp')">Tiếp</button>
+            </div>
+            <div id="pfp">
+                <div>
+                    <h2>Hãy tạo hình đại diện của bạn.</h2>
+                    <p>Cá nhân hóa hồ sơ của bạn bằng một chiếc hình đại diện cực xinh nào.</p>
+                </div>
+                <label for="img_upload">
+                    <img src="@Url.Content(Model.PROFILEPIC)" width="128" height="128" id="pfp_img" />
+                    <br />
+                    Ấn vào hình để chọn
+                </label>
+                <input type="file" accept=".png,.jpg,.gif" onchange="ChangeIMG(this, document.getElementById('pfp_img'))" id="img_upload" hidden />
+                <button onclick="Switch('main', 'pfp')">Tiếp</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-background">
+    <video loop="loop" autoplay="autoplay" playsinline muted="muted" class="vid"
+           src="https://v.pinimg.com/videos/mc/720p/a0/01/d0/a001d02fae1436c3139a74f39343e474.mp4">
+        This browser doesnt support video playback
+    </video>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>
+    function Switch(e, f) {
+        var pref = document.getElementById(e);
+        var next = document.getElementById(f);
+        pref.style.display = "none"
+        next.style.display = "flex"
+    }
+    function ChangeIMG(uploadImage, previewImage) {
+        if (uploadImage.files && uploadImage.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(previewImage).attr('src', e.target.result);
+            }
+            reader.readAsDataURL(uploadImage.files[0])
+        }
+    }
+</script>

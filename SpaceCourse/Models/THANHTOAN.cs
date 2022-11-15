@@ -14,13 +14,12 @@ namespace SpaceCourse.Models
     
     public partial class THANHTOAN
     {
-        public string USERNAMEOWNER { get; set; }
-        public string SOTHE { get; set; }
+        public int ID { get; set; }
+        public string USERNAME { get; set; }
         public Nullable<int> LOAITHE { get; set; }
-        public string CVV { get; set; }
+        public string SOTHE { get; set; }
+        public string CVC { get; set; }
         public Nullable<System.DateTime> EXPIRE { get; set; }
-        public string CHUTHE { get; set; }
-        public int ID_THANHTOAN { get; set; }
     
         public virtual NGUOIDUNG NGUOIDUNG { get; set; }
     }

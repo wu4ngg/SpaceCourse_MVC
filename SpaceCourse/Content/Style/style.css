@@ -37,7 +37,6 @@ Các animation:
 }
 
 body {
-    background: linear-gradient(180.61deg, rgba(114, 170, 254, 0.25) -6.97%, #FFFFFF 99.47%);
     margin: 0;
     background-repeat: no-repeat;
     padding: 0;
@@ -252,7 +251,8 @@ h1 {
     cursor: pointer;
     border-radius: 15px;
     font-size: 20px;
-    margin-top: 45px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
     .lo:hover {
@@ -292,44 +292,6 @@ h1 {
     object-fit: cover;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 479px) {
-    .vid {
-        display: none;
-    }
-
-    .main-background_ad {
-        text-align: center;
-        margin-top: 170px;
-        font-size: 30px;
-        width: 333px;
-    }
-
-    .start_btn {
-        width: 260px;
-        margin-left: 5%;
-    }
-
-    #btnicon {
-        margin-left: 0%;
-    }
-
-    #entry a {
-        display: none;
-    }
-
-    #register {
-        display: none;
-    }
-
-    #login {
-        display: none;
-    }
-
-    #btntext {
-        margin-left: 69px;
-    }
-}
-
 
 .header {
     z-index: 4;
@@ -339,7 +301,7 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 .header-item {
@@ -421,8 +383,8 @@ h1 {
     top: 0;
     left: 0;
     position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(20px);
     display: flex;
@@ -516,7 +478,7 @@ a {
 }
 
 #register {
-    margin-top: -2px;
+    margin-top: auto;
     font-size: 16px;
 }
 
@@ -616,8 +578,8 @@ a {
     animation: blur 0.5s;
     background-color: rgba(0, 0, 0, 0.562);
     backdrop-filter: blur(20px);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     left: 0;
     top: 0;
     position: fixed;
@@ -628,7 +590,7 @@ a {
 
 .register-wrap {
     animation: showLogin 0.5s;
-    width: 800px;
+    width: 850px;
     background-color: white;
     display: flex;
     overflow: hidden;
@@ -636,22 +598,49 @@ a {
 }
 
 .left_img-wrap {
-    padding: 25px;
+    color: white;
+    width: 350px;
+    height: 100%;
+    background-image: url("../img/galaxy-space.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-    .left_img-wrap img {
-        width: 215px;
-        border-radius: 16px;
+    .left_img-wrap h2 {
+        color: white;
     }
 
-    .left_img-wrap video {
-        width: 215px;
-        border-radius: 16px;
+.left_img-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    width: 85%;
+    min-height: 100%;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+    .left_img-desc ul li {
+        margin-left: 25px;
     }
+
+.left_img-wrap img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.left_img-wrap video {
+    width: 215px;
+    border-radius: 16px;
+}
 
 .wrap-right {
-    padding: 20px 28px 25px 30px;
-    width: 100%;
+    padding: 25px 25px;
+    width: 89%;
 }
 
     .wrap-right h5 {
@@ -665,13 +654,12 @@ a {
 
 .register-forms_input {
     color: #5e5e5e;
-    margin-left: 4px;
-    margin-bottom: 2px;
     font-size: 16px;
     font-family: system-ui;
 }
 
 .passwd_form {
+    justify-content: space-between;
     display: flex;
 }
 
@@ -690,18 +678,19 @@ a {
 .form_text {
     transition: background-color 0.2s, outline 0.2s;
     font-size: 16px;
-    background-color: #E4E4E4;
-    padding: 11px 0px 11px 16px;
+    background-color: transparent;
     border: none;
-    border-radius: 8px;
-    width: 97%;
+    border-bottom: 2px #E4E4E4 solid;
+    border-radius: 0px;
+    width: 100%;
     margin-bottom: 15px;
-    outline: 0px #B2E3FF solid;
+    padding: 10px 0;
 }
 
     .form_text:focus {
         background-color: white;
-        outline: 2px #B2E3FF solid;
+        border-bottom: 2px #B2E3FF solid;
+        outline: none;
     }
 
     .form_text::placeholder {
@@ -726,7 +715,7 @@ a {
 
     .register-forms input {
         margin-bottom: 10px;
-        width: 90%;
+        width: 100%;
     }
 
 .chkbox {
@@ -806,14 +795,16 @@ a {
 }
 
 .btn_wrapper {
-    float: right;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    float: left;
     margin-top: 10px;
     margin-right: 50px;
 }
 
-.p_haveacc {
-    margin-top: 65px;
-}
+
 
 .btn_createacc {
     transition: outline 0.2s, box-shadow 0.2s, color 0.5s;
@@ -824,24 +815,25 @@ a {
     padding: 15px;
     border-radius: 10px;
     font-weight: bold;
-    float: right;
     box-shadow: 0 4px 24px #B2E3FF;
-    margin-left: 25px;
-    ;
 }
 
-    .btn_createacc:hover {
-        cursor: pointer;
-        outline: 4px black solid;
-        background-color: white;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.527);
-    }
+.p_haveacc {
+    text-align: center;
+}
 
-    .btn_createacc:active {
-        outline: 2px black solid;
-        color: rgba(0, 0, 0, 0.555);
-        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.527);
-    }
+.btn_createacc:hover {
+    cursor: pointer;
+    outline: 4px black solid;
+    background-color: white;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.527);
+}
+
+.btn_createacc:active {
+    outline: 2px black solid;
+    color: rgba(0, 0, 0, 0.555);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.527);
+}
 
 .cancel {
     outline: 4px black solid;
@@ -890,6 +882,7 @@ a {
     .novis .register-wrap {
         animation: rev 0.5s;
     }
+
 /* Body */
 
 .main-body {
@@ -1093,9 +1086,16 @@ a {
     }
 }
 
+.main-body_adv img {
+    margin-top: -100px !important;
+    width: 850px;
+}
+
 @media only screen and (max-width : 1300px) {
     .main-body_adv img {
-        display: none;
+        margin-top: -40px;
+        width: 550px;
+        left: 35vw;
     }
 }
 
@@ -1121,7 +1121,6 @@ a {
     margin-bottom: 25px;
     font-size: 35px;
     word-spacing: 1px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .course-container--demo_description {
@@ -1133,6 +1132,7 @@ a {
 
 .course-container--popular {
     display: flex;
+    gap: 25px;
     justify-content: space-around;
     padding-left: 10vw;
     padding-right: 10vw;
@@ -1140,23 +1140,22 @@ a {
 
 .course-card {
     width: 100%;
-    font-family: 'Source Sans Pro', sans-serif;
     color: #000;
     text-decoration: none;
-    margin: 0 16px;
+    margin-bottom: auto;
     padding-bottom: 20px;
-    box-shadow: rgb(0 0 0 / 5%) 0px 1px 3px 0px;
-    border-radius: 4px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+    border-radius: 0px;
     overflow: hidden;
     transition: 0.3s;
 }
 
     .course-card:hover {
-        box-shadow: 0 4px 14px 2px rgb(0 0 0 / 10%);
+        box-shadow: 0 4px 14px 2px #B2E3FF;
     }
 
 .course-card--section {
-    padding: 0 10px;
+    padding: 0 25px;
 }
 
 .course-card--title {
@@ -1183,72 +1182,89 @@ a {
 }
 
 .course-card--footer {
-    display: block;
     opacity: 0.8;
     display: flex;
     margin-top: 32px;
+    justify-content: center;
 }
 
     .course-card--footer .footer--video {
+        padding-right: 15px;
+        border-right: 2px black solid;
         margin-right: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
-        .course-card--footer .footer--video h5 {
-            font-weight: normal;
-            font-size: 16px;
-        }
+.footer--skill {
+    margin-top: auto;
+    margin-bottom: auto;
+}
 
-    .course-card--footer .footer--skill h5 {
-        font-weight: normal;
-        font-size: 16px;
-    }
+.course-card--footer .footer--video h5 {
+    font-weight: normal;
+    font-size: 16px;
+}
 
-    .course-card--footer .footer--video span {
-        font-size: 12px;
-    }
+.course-card--footer .footer--skill h5 {
+    font-weight: normal;
+    font-size: 16px;
+}
 
-    .course-card--footer .footer--skill span {
-        font-size: 12px;
-    }
+.course-card--footer .footer--video span {
+    font-size: 12px;
+}
+
+.course-card--footer .footer--skill span {
+    font-size: 12px;
+}
 
 .footer--btn_explore {
-    margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0 15px;
 }
 
 .btn_explore1 {
+    font-size: 16px;
     display: none;
-    border-radius: 5px;
     border: none;
-    background-color: #2d0091;
-    color: #fff;
+    border-radius: 6px;
+    background-color: #B2E3FF;
+    color: black;
+    padding: 5px 10px;
     font-weight: 800;
     transition: 0.2s;
-    width: 70px;
-    height: 36px;
+    width: 100%;
+    box-shadow: 0 4px 24px #B2E3FF;
 }
 
 .btn_explore2 {
+    font-size: 16px;
     display: none;
-    border-radius: 5px;
     border: none;
-    background-color: #2d0091;
-    color: #fff;
+    border-radius: 6px;
+    background-color: #B2E3FF;
+    color: black;
+    padding: 5px 10px;
     font-weight: 800;
     transition: 0.2s;
-    width: 70px;
-    height: 36px;
+    width: 100%;
+    box-shadow: 0 4px 24px #B2E3FF;
 }
 
 .btn_explore3 {
+    font-size: 16px;
     display: none;
-    border-radius: 5px;
     border: none;
-    background-color: #2d0091;
-    color: #fff;
+    border-radius: 6px;
+    background-color: #B2E3FF;
+    color: black;
+    padding: 5px 10px;
     font-weight: 800;
     transition: 0.2s;
-    width: 70px;
-    height: 36px;
+    width: 100%;
+    box-shadow: 0 4px 24px #B2E3FF;
 }
 
 .btn_explore1.js-show--btn_explore {
@@ -1277,9 +1293,10 @@ a {
     opacity: 0.8;
     cursor: pointer;
 }
+
 /*  */
 .main_body_population {
-    margin-top: 225vh;
+    margin-top: 230vh;
 }
 
 .course-card img {
@@ -1348,7 +1365,7 @@ a {
 }
 
 .entry_footer p {
-    margin-top: 5px;
+    margin-top: 30px;
     font-size: 14px;
 }
 
@@ -1382,6 +1399,7 @@ a {
 .entry_footer-paragraph {
     width: 100%;
 }
+
 /*Black text on header*/
 .course {
     color: black;
@@ -1422,7 +1440,7 @@ a {
     display: block;
     justify-content: center;
     left: 0;
-    width: 50%;
+    width: 75%;
     height: 65px;
     backdrop-filter: blur(20px);
     background-color: rgba(255, 255, 255, 0.753);
@@ -1440,7 +1458,7 @@ a {
 }
 
 .list {
-    width: 100%;
+    width: 120%;
     padding: 0 5%;
 }
 
@@ -1516,6 +1534,14 @@ a {
     }
 
 @media only screen and (max-width: 1200px) {
+    .main-body_adv img {
+        display: none;
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-top: 25px;
+    }
+
     .vid {
         filter: brightness(25%);
     }
@@ -1526,6 +1552,7 @@ a {
     }
 
     .main-body_adv {
+        display: block;
         left: -2px;
         width: 100vw;
         text-align: center;
@@ -1585,6 +1612,8 @@ a {
     }
 
     .main-adv_mess_mid {
+        display: block;
+        margin: 0;
         text-align: center;
     }
 
@@ -1600,6 +1629,10 @@ a {
         display: none;
     }
 
+    .reality {
+        display: block;
+    }
+
     #register {
         display: none;
     }
@@ -1611,6 +1644,8 @@ a {
     .course-container--popular {
         flex-direction: column;
         gap: 25px;
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
 
     .footer_main {
@@ -1629,6 +1664,15 @@ a {
 
     .mobile {
         display: flex !important;
+    }
+
+    #body_intro {
+        animation: rev 0.5s;
+        margin: 10vw;
+    }
+
+    .course-containter {
+        padding: 0 5vw;
     }
 }
 

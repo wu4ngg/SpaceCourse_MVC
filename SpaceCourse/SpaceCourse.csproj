@@ -128,10 +128,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BAIHOC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMMENT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FORUM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FORUM_REPLY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHOAHOC.cs">
@@ -166,7 +176,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\background.mp4" />
+    <Content Include="Content\img\check_circle_black_24dp.svg" />
     <Content Include="Content\img\Dark_logo.png" />
+    <Content Include="Content\img\DefaultPFP.png" />
     <Content Include="Content\img\favicon.png" />
     <Content Include="Content\img\Frame_7.png" />
     <Content Include="Content\img\imgLogin.gif" />
@@ -194,6 +206,7 @@
     <Content Include="Content\img\SpaceCourse.mp4" />
     <Content Include="Content\script\info.js" />
     <Content Include="Content\script\main.js" />
+    <Content Include="Content\script\preview.js" />
     <Content Include="Content\Style\about-page.css" />
     <Content Include="Content\Style\course.css" />
     <Content Include="Content\Style\course_backend.css" />
@@ -207,8 +220,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -217,6 +230,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\img\plane-icon.webp" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -224,7 +238,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\img\plane-icon.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -256,6 +269,9 @@
     <Content Include="Views\Shared\_LayoutNoFooter.cshtml" />
     <Content Include="Views\Courses\FrontEnd.cshtml" />
     <Content Include="Views\Courses\BackEnd.cshtml" />
+    <Content Include="Views\Register\Main.cshtml" />
+    <Content Include="Views\Register\Complete.cshtml" />
+    <Content Include="Views\Register\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

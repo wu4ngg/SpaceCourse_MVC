@@ -11,28 +11,32 @@ namespace SpaceCourse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
     public partial class NGUOIDUNG
     {
         public NGUOIDUNG()
         {
-            this.BAIHOCs = new HashSet<BAIHOC>();
-            this.BAIHOCs1 = new HashSet<BAIHOC>();
+            this.COMMENTs = new HashSet<COMMENT>();
+            this.Fora = new HashSet<FORUM>();
+            this.FORUM_REPLY = new HashSet<FORUM_REPLY>();
             this.KHOAHOCs = new HashSet<KHOAHOC>();
             this.THANHTOANs = new HashSet<THANHTOAN>();
+            PROFILEPIC = "~/Content/img/DefaultPFP.png";
+            PREMIUM = 0;
         }
-    
         public string USERNAME { get; set; }
-        public string HOTEN { get; set; }
-        public string PASSWORD_HASH { get; set; }
-        public System.DateTime NGAYSINH { get; set; }
-        public string SDT { get; set; }
         public string EMAIL { get; set; }
-        public int CHUCVU { get; set; }
+        public string PASSWD { get; set; }
+        public string PROFILEPIC { get; set; }
+        public Nullable<int> PREMIUM { get; set; }
     
-        public virtual ICollection<BAIHOC> BAIHOCs { get; set; }
-        public virtual ICollection<BAIHOC> BAIHOCs1 { get; set; }
+        public virtual ICollection<COMMENT> COMMENTs { get; set; }
+        public virtual ICollection<FORUM> Fora { get; set; }
+        public virtual ICollection<FORUM_REPLY> FORUM_REPLY { get; set; }
         public virtual ICollection<KHOAHOC> KHOAHOCs { get; set; }
         public virtual ICollection<THANHTOAN> THANHTOANs { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set; }
     }
 }
