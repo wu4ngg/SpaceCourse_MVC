@@ -11,8 +11,7 @@ namespace SpaceCourse.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Web;
+    
     public partial class NGUOIDUNG
     {
         public NGUOIDUNG()
@@ -22,9 +21,8 @@ namespace SpaceCourse.Models
             this.FORUM_REPLY = new HashSet<FORUM_REPLY>();
             this.KHOAHOCs = new HashSet<KHOAHOC>();
             this.THANHTOANs = new HashSet<THANHTOAN>();
-            PROFILEPIC = "~/Content/img/DefaultPFP.png";
-            PREMIUM = 0;
         }
+    
         public string USERNAME { get; set; }
         public string EMAIL { get; set; }
         public string PASSWD { get; set; }
@@ -36,7 +34,5 @@ namespace SpaceCourse.Models
         public virtual ICollection<FORUM_REPLY> FORUM_REPLY { get; set; }
         public virtual ICollection<KHOAHOC> KHOAHOCs { get; set; }
         public virtual ICollection<THANHTOAN> THANHTOANs { get; set; }
-        [NotMapped]
-        public HttpPostedFileBase ImageUpload { get; set; }
     }
 }
