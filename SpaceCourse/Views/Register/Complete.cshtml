@@ -69,6 +69,12 @@
                 <button onclick="Switch('main', 'pfp')">Tiếp</button>
             </div>
             <div id="pfp">
+                @using (Html.BeginForm("Complete", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                    @Html.HiddenFor(m => m.PROFILEPIC)
+                    @Html.HiddenFor(m => m.USERNAME)
+                    @Html.HiddenFor(m => m.PASSWD)
+                    @Html.HiddenFor(m => m.PREMIUM)
                 <div>
                     <h2>Hãy tạo hình đại diện của bạn.</h2>
                     <p>Cá nhân hóa hồ sơ của bạn bằng một chiếc hình đại diện cực xinh nào.</p>
@@ -78,8 +84,9 @@
                     <br />
                     Ấn vào hình để chọn
                 </label>
-                <input type="file" accept=".png,.jpg,.gif" onchange="ChangeIMG(this, document.getElementById('pfp_img'))" id="img_upload" hidden />
-                <button onclick="Switch('main', 'pfp')">Tiếp</button>
+                <input type="file" name="ImageUpload" accept=".png,.jpg,.gif" onchange="ChangeIMG(this, document.getElementById('pfp_img'))" id="img_upload" hidden />
+                <input type="submit" value="Complete" />
+            }
             </div>
         </div>
     </div>

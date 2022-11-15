@@ -59,12 +59,12 @@ namespace SpaceCourse.Controllers
                     string file = Path.GetFileNameWithoutExtension(_user.ImageUpload.FileName);
                     string extenstion = Path.GetExtension(_user.ImageUpload.FileName);
                     file = file + extenstion;
-                    _user.PROFILEPIC = "~/Content/img" + file;
+                    _user.PROFILEPIC = "~/Content/img/" + file;
                     _user.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/img/"), file));
                 }
                 db.Entry(_user).State = System.Data.EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Complete", "Register");
+                return RedirectToAction("Main", "Register");
             }
             catch
             {
