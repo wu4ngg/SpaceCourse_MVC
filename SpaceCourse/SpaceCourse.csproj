@@ -178,12 +178,11 @@
     <Content Include="Content\img\background.mp4" />
     <Content Include="Content\img\check_circle_black_24dp.svg" />
     <Content Include="Content\img\Dark_logo.png" />
-    <Content Include="Content\img\DefaultPFP.png" />
     <Content Include="Content\img\favicon.png" />
     <Content Include="Content\img\Frame_7.png" />
     <Content Include="Content\img\imgLogin.gif" />
     <Content Include="Content\img\img_bg.png" />
-    <Content Include="Content\img\Light_logo.png" />
+    <Content Include="Content\img\DefaultPFP.png" />
     <Content Include="Content\img\LoginBG.png" />
     <Content Include="Content\img\logo1-removebg-preview.png" />
     <Content Include="Content\img\logo3.png" />

@@ -7,8 +7,10 @@
 
 <style>
     .register-main {
+        z-index: 2;
+        backdrop-filter: none;
         animation: none;
-        backdrop-filter: blur(100px);
+        background-color: rgba(0,0,0,0.55);
     }
 
     .register-wrap {
@@ -19,7 +21,7 @@
         text-align: center;
     }
 
-    #main, #pfp {
+    #main, #pfp, .pfp {
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -28,7 +30,7 @@
         gap: 15px;
     }
 
-    .wrap-right button {
+    .wrap-right button, input {
         padding: 0.5rem 1rem;
         border: none;
         outline: 4px #7299FE solid;
@@ -39,6 +41,7 @@
 
     #pfp {
         display: none;
+        gap: 25px;
     }
 
     .visible {
@@ -69,7 +72,7 @@
                 <button onclick="Switch('main', 'pfp')">Tiếp</button>
             </div>
             <div id="pfp">
-                @using (Html.BeginForm("Complete", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("Complete", "Register", FormMethod.Post, new { enctype = "multipart/form-data", @class = "pfp"}))
             {
                     @Html.HiddenFor(m => m.PROFILEPIC)
                     @Html.HiddenFor(m => m.USERNAME)
