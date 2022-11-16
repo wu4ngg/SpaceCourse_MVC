@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CoursePageController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -188,6 +189,7 @@
     <Content Include="Content\img\galaxy-space.gif" />
     <Content Include="Content\img\imgLogin.gif" />
     <Content Include="Content\img\img_bg.png" />
+    <Content Include="Content\img\JS_CL.svg" />
     <Content Include="Content\img\Light_logo.png" />
     <Content Include="Content\img\LoginBG.png" />
     <Content Include="Content\img\logo1-removebg-preview.png" />
@@ -214,6 +216,7 @@
     <Content Include="Content\script\main.js" />
     <Content Include="Content\Style\about-page.css" />
     <Content Include="Content\Style\course.css" />
+    <Content Include="Content\Style\coursepage.css" />
     <Content Include="Content\Style\course_backend.css" />
     <Content Include="Content\Style\forum.css" />
     <Content Include="Content\Style\responsive.css" />
@@ -279,6 +282,8 @@
     <Content Include="Views\Register\Complete.cshtml" />
     <Content Include="Views\Forum\ForumHome.cshtml" />
     <Content Include="Views\Forum\Home.cshtml" />
+    <Content Include="Views\CoursePage\Home.cshtml" />
+    <Content Include="Views\CoursePage\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

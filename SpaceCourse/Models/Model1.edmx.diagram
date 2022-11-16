@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f98d847c0a9245acb2b90e9d47b13c76" Name="Diagram1">
+      <Diagram DiagramId="ebeb0ebc6bda4cb58b029b436ad04b4f" Name="Diagram1">
         <EntityTypeShape EntityType="SPACECOURSE_DBModel.Cerf" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SPACECOURSE_DBModel.Cours" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SPACECOURSE_DBModel.Feedback" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
@@ -13,16 +13,16 @@
         <EntityTypeShape EntityType="SPACECOURSE_DBModel.Service" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SPACECOURSE_DBModel.User" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SPACECOURSE_DBModel.AdminUser" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Cerf__id_lesson__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Cerf__id_user__4AB81AF0" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Courses__subscri__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Feedback__id_cou__44FF419A" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Lessons__id_cour__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Feedback__id_use__440B1D61" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Lessons__id_user__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Pay__id_user__47DBAE45" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Services__id_use__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="SPACECOURSE_DBModel.FK__AdminUser__id_ad__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Cerf__id_lesson__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Cerf__id_user__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Courses__subscri__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Feedback__id_cou__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Lessons__id_cour__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Feedback__id_use__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Lessons__id_user__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Pay__id_user__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__Services__id_use__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="SPACECOURSE_DBModel.FK__AdminUser__id_ad__24927208" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
