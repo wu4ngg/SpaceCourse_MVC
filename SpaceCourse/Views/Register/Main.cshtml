@@ -31,9 +31,9 @@
             </div>
         </div>
         <div class="wrap-right">
-                @using (Html.BeginForm("Main", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-            <div class="register-forms">
+            @using (Html.BeginForm("Main", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="register-forms" id="basic">
                     <div class="email_form">
                         <div class="email_form-head">
                             <h4 class="register-forms_input">
@@ -84,6 +84,39 @@
                         <li>Phải có ít nhất 1 số</li>
                     </ul>
                     <div class="agree_form">
+                        <div class="btn_wrapper">
+                            <div>
+                                <input type="button" class="btn_createacc" value="Tiếp" onclick="ChangePage('basic', 'advanced')">
+                                <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
+                                <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="register-forms" style="display: none" id="advanced">
+                    <h2>Chỉ còn vài bước nữa là bạn đã là thành viên của SPACECOURSE!</h2>
+                    <div class="name_form">
+                        <div class="name_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;"
+                                   class="ti-email"></i> Họ Tên:
+                            </h4>
+                        </div>
+                        @Html.TextBoxFor(m => m.name_user, new { @class = "form_text" })
+                        <p class="err_msg">@Html.ValidationMessageFor(m => m.name_user)</p>
+                    </div>
+                    <div class="phone_form">
+                        <div class="name_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;"
+                                   class="ti-email"></i> Số điện thoại:
+                            </h4>
+                        </div>
+                        @Html.TextBoxFor(m => m.sdt, new { @class = "form_text" })
+                        <p class="err_msg">@Html.ValidationMessageFor(m => m.sdt)</p>
+                    </div>
+                    <div class="agree_form">
                         <label class="chkbox_container">
                             Tôi đồng ý với <a href="#">Điều khoản</a>
                             @Html.CheckBoxFor(m => m.accept_eula)
@@ -96,15 +129,15 @@
                         </label>
                         <div class="btn_wrapper">
                             <div>
-                                <input type="submit" class="btn_createacc" value="Register">
+                                <input type="submit" class="btn_createacc" value="Đăng ký" />
                                 <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
                                 <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
                             </div>
                             <div></div>
                         </div>
                     </div>
-            </div>
-                }
+                </div>
+            }
         </div>
     </div>
     <div></div>
@@ -116,3 +149,11 @@
     </video>
 </div>
 
+<script>
+    function ChangePage(prev, next) {
+        var prevpg = document.getElementById(prev)
+        var nextpg = document.getElementById(next)
+        prevpg.style.display = "none"
+        nextpg.style.display = "block"
+    }
+</script>
