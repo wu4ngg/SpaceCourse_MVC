@@ -1,0 +1,223 @@
+﻿.channels-content-head {
+    margin-top: 25px;
+    margin-left: 75px;
+    color: rgb(105, 100, 100);
+}
+
+.list-course {
+    margin-top: 15px;
+    margin-left: 95px;
+}
+
+    .list-course li {
+        border-radius: 6px;
+        margin-top: 6px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+.main_forum-body {
+    margin: 100px;
+}
+
+.channels-content-type ul {
+    list-style: none;
+}
+
+    .channels-content-type ul .list-course-li1::before {
+        content: "\2022";
+        font-size: 28px;
+        color: red;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    .channels-content-type ul .list-course-li2::before {
+        content: "\2022";
+        font-size: 28px;
+        color: rgb(238, 238, 18);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    .channels-content-type ul .list-course-li3::before {
+        content: "\2022";
+        font-size: 28px;
+        color: rgb(147, 229, 151);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    .channels-content-type ul .list-course-li4::before {
+        content: "\2022";
+        font-size: 28px;
+        color: rgba(81, 81, 231, 0.74);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+.list-course li {
+    transition: ease-out 0.2s;
+}
+
+.body-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.body-content_newforum {
+    margin-top: -116px;
+}
+
+    .body-content_newforum button {
+        margin-top: 200px;
+        transition: 0.1s;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        font-size: 15px;
+        width: 150px;
+        height: 50px;
+        background-color: white;
+        color: black;
+        outline: 4px #7299FE solid;
+        box-shadow: 0 4px 14px #7299FE;
+        cursor: pointer;
+        transition: linear 0.2s;
+    }
+
+        .body-content_newforum button:hover {
+            outline: 4px black solid;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.329);
+        }
+
+.list-course li:hover {
+    transform: translateX(5px);
+}
+
+.content_forum_wrap {
+    width: 100%;
+    margin-left: -10%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.body-content-user img {
+    height: 30px;
+}
+
+.body-content-note {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+    justify-content: center;
+    background-color: #DBEAFE;
+    border-radius: 25px;
+    height: 30px;
+    margin-left: 13px;
+}
+
+.body-content-info {
+    display: flex;
+}
+
+.body-content-user img {
+    margin-right: 13px;
+}
+
+.content-type {
+    display: flex;
+    margin-left: 455px;
+}
+
+.body-content-comment div {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.body-content_forum {
+    margin-top: 101px;
+    margin-left: 150px;
+}
+
+.body-content_channels {
+    margin-top: 59px;
+    margin-left: 12px;
+}
+
+.channels-general {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+    justify-content: center;
+    background-color: #DBEAFE;
+    border-radius: 25px;
+    height: 30px;
+}
+
+.channels-HTML-5 {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #724c25;
+    justify-content: center;
+    background-color: #f9ddb9;
+    border-radius: 25px;
+    height: 30px;
+}
+
+.channels-WEB-API {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #78812f;
+    justify-content: center;
+    background-color: #EEEE12;
+    border-radius: 25px;
+    height: 30px;
+}
+
+.channels-JavaScript {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff253a;
+    justify-content: center;
+    background-color: #ffd6d6;
+    border-radius: 25px;
+    height: 30px;
+}
+
+.channels-CSS {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #21580a;
+    justify-content: center;
+    background-color: #93E597;
+    border-radius: 25px;
+    height: 30px;
+}
