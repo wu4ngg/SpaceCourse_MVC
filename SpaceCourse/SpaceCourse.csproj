@@ -136,43 +136,43 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminUser.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cerf.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cours.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedback.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Lesson.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Pay.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Service.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpaceCourseDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceCourseDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpaceCourseDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpaceCourseDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -224,25 +224,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\SpaceCourseDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
+      <LastGenOutput>SpaceCourseDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\SpaceCourseDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
+      <LastGenOutput>SpaceCourseDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\img\plane-icon.webp" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\SpaceCourseDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>SpaceCourseDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\SpaceCourseDB.edmx.diagram">
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -279,11 +279,11 @@
     <Content Include="Views\Register\Complete.cshtml" />
     <Content Include="Views\Forum\ForumHome.cshtml" />
     <Content Include="Views\Forum\Home.cshtml" />
+    <Content Include="Views\Login\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

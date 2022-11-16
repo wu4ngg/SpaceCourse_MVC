@@ -1,0 +1,49 @@
+﻿@model SpaceCourse.Models.User
+
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
+}
+
+<div class="main-login ">
+    <div class="searchdialog visible" id="sd">
+        <div class="searchdialog-contain">
+            <div class="logindialog">
+                <div id="title">
+                    <div class="sidebar"></div>
+                    @using (Html.BeginForm("Main", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div id="rightw">
+                            <div id="right">
+                                <div class="right-title">
+                                    <h1>Đăng nhập</h1>
+                                </div>
+                                <div class="material-symbols-outlined flex btn_close_event"
+                                     onclick="loginquit()">close</div>
+                            </div>
+                            <div id="login">
+                                <form class="frm">
+                                    @Html.TextBoxFor(m => m.emai, new { @class = "login_text", placeholder = "example@domain.com" })
+                                    @Html.PasswordFor(m => m.user_password, new { @class = "login_text" })
+                                </form>
+                            </div>
+                            <div class="frm_login_btn">
+                                <input type="submit" value="Login" />
+                            </div>
+                            <a href="#">Quên mật khẩu?</a>
+                            <div class="frm_login_forgot_noacc">
+
+                                <div id="noacc">
+                                    Không có tài khoản? <a class="frm_login_forgot_noacc-changeRegis">Đăng ký</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</div>
+<script src="~/Content/script/main.js"></script>
+<script src="~/Content/script/info.js"></script>

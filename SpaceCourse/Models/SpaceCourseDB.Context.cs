@@ -13,10 +13,10 @@ namespace SpaceCourse.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SPACECOURSE : DbContext
+    public partial class SpaceCourseEntities1 : DbContext
     {
-        public SPACECOURSE()
-            : base("name=SPACECOURSE")
+        public SpaceCourseEntities1()
+            : base("name=SpaceCourseEntities1")
         {
         }
     
