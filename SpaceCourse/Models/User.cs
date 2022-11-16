@@ -11,7 +11,10 @@ namespace SpaceCourse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Text;
+
     public partial class User
     {
         public User()
@@ -22,13 +25,21 @@ namespace SpaceCourse.Models
             this.Lessons = new HashSet<Lesson>();
             this.Pays = new HashSet<Pay>();
             this.Services = new HashSet<Service>();
+            profile_pic = "~/Content/img/Light_logo.png";
         }
-    
         public int id_user { get; set; }
         public string name_user { get; set; }
+        [Required(ErrorMessage = "Mật khẩu không được rỗng!")]
+        [RegularExpression("(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$", ErrorMessage = "Mật khẩu không hợp lệ!")]
         public string user_password { get; set; }
         public string sdt { get; set; }
+        [Required(ErrorMessage = "Email không được rỗng!")]
+        [RegularExpression("^(?(\"\")(\\\"\\\".+?\"\"@)|(([0-9a-zA-Z]((\\.(?!\\.))|[-!#\\$%&'\\*\\+/=\\?\\^`\\{\\}\\|~\\w])*)(?<=[0-9a-zA-Z])@))(?(\\[)(\\[(\\d{1,3}\\.){3}\\d{1,3}\\])|(([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,6}))$", ErrorMessage = "Email không hợp lệ!")]
         public string emai { get; set; }
+        [Required(ErrorMessage = "Username không được rỗng!")]
+        [MinLength(4, ErrorMessage = "Username quá ngắn.")]
+        [MaxLength(20, ErrorMessage = "Username quá dài.")]
+        [RegularExpression("^[a-zA-Z0-9!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$", ErrorMessage = "Username chứa ký tự đặc biệt.")]
         public string user_name { get; set; }
     
         public virtual ICollection<Certificate> Certificates { get; set; }
@@ -38,5 +49,10 @@ namespace SpaceCourse.Models
         public virtual ICollection<Pay> Pays { get; set; }
         public virtual ICollection<Service> Services { get; set; }
         public virtual AdminUser AdminUser { get; set; }
+        [NotMapped]
+        [Compare("user_password", ErrorMessage = "M?t kh?u không kh?p.")]
+        public string re_password { get; set; }
+        [Required(ErrorMessage = "Vui lòng ch?p nh?n ?i?u kho?n.")]
+        public bool accept_eula { get; set; }
     }
 }
