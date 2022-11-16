@@ -1,146 +1,278 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SPACECOURSE_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="BAIHOC">
+  <EntityType Name="Cerf">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="id_cer" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NGUOIDANG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="MOTA" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="LUOTXEM" Type="Int32" />
-    <Property Name="NGUOIHOC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="TIENTRINH" Type="Int32" />
-    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.BH_FK" FromRole="BAIHOC" ToRole="NGUOIDUNG" />
-    <NavigationProperty Name="NGUOIDUNG1" Relationship="Self.BH_NH_FK" FromRole="BAIHOC" ToRole="NGUOIDUNG" />
-    <NavigationProperty Name="KHOAHOCs" Relationship="Self.KH_BH_FK" FromRole="BAIHOC" ToRole="KHOAHOC" />
+    <Property Name="id_cer" Type="Int32" Nullable="false" />
+    <Property Name="ngaycap" Type="DateTime" Precision="0" />
+    <Property Name="id_user" Type="Int32" />
+    <Property Name="id_lesson" Type="Int32" />
+    <NavigationProperty Name="Lesson" Relationship="Self.FK__Cerf__id_lesson__4BAC3F29" FromRole="Cerf" ToRole="Lessons" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Cerf__id_user__4AB81AF0" FromRole="Cerf" ToRole="Users" />
   </EntityType>
-  <EntityType Name="KHOAHOC">
+  <EntityType Name="Cours">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="id_course" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NGUOIHOC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="TEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="BAIHOC" Type="Int32" />
-    <Property Name="MOTA" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-    <Property Name="TIENTRINH" Type="Int32" />
-    <NavigationProperty Name="BAIHOC1" Relationship="Self.KH_BH_FK" FromRole="KHOAHOC" ToRole="BAIHOC" />
-    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.KH_NH_FK" FromRole="KHOAHOC" ToRole="NGUOIDUNG" />
+    <Property Name="id_course" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="subscriber_user" Type="Int32" />
+    <Property Name="is_premium" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="process" Type="Double" />
+    <Property Name="name_course" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Name="img_course" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="accent_color" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Courses__subscri__3A81B327" FromRole="Courses" ToRole="Users" />
+    <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__id_cou__44FF419A" FromRole="Courses" ToRole="Feedback" />
+    <NavigationProperty Name="Lessons" Relationship="Self.FK__Lessons__id_cour__3E52440B" FromRole="Courses" ToRole="Lessons" />
   </EntityType>
-  <EntityType Name="NGUOIDUNG">
+  <EntityType Name="Feedback">
     <Key>
-      <PropertyRef Name="USERNAME" />
+      <PropertyRef Name="id_feedback" />
     </Key>
-    <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="HOTEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PASSWORD_HASH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="NGAYSINH" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CHUCVU" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="BAIHOCs" Relationship="Self.BH_FK" FromRole="NGUOIDUNG" ToRole="BAIHOC" />
-    <NavigationProperty Name="BAIHOCs1" Relationship="Self.BH_NH_FK" FromRole="NGUOIDUNG" ToRole="BAIHOC" />
-    <NavigationProperty Name="KHOAHOCs" Relationship="Self.KH_NH_FK" FromRole="NGUOIDUNG" ToRole="KHOAHOC" />
-    <NavigationProperty Name="THANHTOANs" Relationship="Self.TT_FK" FromRole="NGUOIDUNG" ToRole="THANHTOAN" />
+    <Property Name="id_feedback" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="id_course" Type="Int32" />
+    <Property Name="content" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="id_user" Type="Int32" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK__Feedback__id_cou__44FF419A" FromRole="Feedback" ToRole="Courses" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Feedback__id_use__440B1D61" FromRole="Feedback" ToRole="Users" />
   </EntityType>
-  <EntityType Name="THANHTOAN">
+  <EntityType Name="Lesson">
     <Key>
-      <PropertyRef Name="ID_THANHTOAN" />
+      <PropertyRef Name="id_lesson" />
     </Key>
-    <Property Name="USERNAMEOWNER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="SOTHE" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="LOAITHE" Type="Int32" />
-    <Property Name="CVV" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="EXPIRE" Type="DateTime" Precision="0" />
-    <Property Name="CHUTHE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="ID_THANHTOAN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.TT_FK" FromRole="THANHTOAN" ToRole="NGUOIDUNG" />
+    <Property Name="id_lesson" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="process" Type="Double" />
+    <Property Name="id_user" Type="Int32" />
+    <Property Name="name_lesson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="video_lesson" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="id_course" Type="Int32" />
+    <NavigationProperty Name="Cerfs" Relationship="Self.FK__Cerf__id_lesson__4BAC3F29" FromRole="Lessons" ToRole="Cerf" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK__Lessons__id_cour__3E52440B" FromRole="Lessons" ToRole="Courses" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Lessons__id_user__3D5E1FD2" FromRole="Lessons" ToRole="Users" />
   </EntityType>
-  <Association Name="BH_FK">
-    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
-    <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="*" />
+  <EntityType Name="Pay">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="loaithe" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ngaythanhtoan" Type="DateTime" Precision="0" />
+    <Property Name="cvc" Type="Int32" />
+    <Property Name="expire" Type="DateTime" Precision="0" />
+    <Property Name="sothe" Type="Int32" />
+    <Property Name="madv" Type="Int32" />
+    <Property Name="id_user" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Pay__id_user__47DBAE45" FromRole="Pay" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="id_service" />
+    </Key>
+    <Property Name="id_service" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date_regis" Type="DateTime" Precision="0" />
+    <Property Name="type_service" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="id_user" Type="Int32" />
+    <Property Name="price" Type="Double" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Services__id_use__412EB0B6" FromRole="Services" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_user" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="user_password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="sdt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="emai" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="profile_pic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cerfs" Relationship="Self.FK__Cerf__id_user__4AB81AF0" FromRole="Users" ToRole="Cerf" />
+    <NavigationProperty Name="Courses" Relationship="Self.FK__Courses__subscri__3A81B327" FromRole="Users" ToRole="Courses" />
+    <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__id_use__440B1D61" FromRole="Users" ToRole="Feedback" />
+    <NavigationProperty Name="Lessons" Relationship="Self.FK__Lessons__id_user__3D5E1FD2" FromRole="Users" ToRole="Lessons" />
+    <NavigationProperty Name="Pays" Relationship="Self.FK__Pay__id_user__47DBAE45" FromRole="Users" ToRole="Pay" />
+    <NavigationProperty Name="Services" Relationship="Self.FK__Services__id_use__412EB0B6" FromRole="Users" ToRole="Services" />
+    <NavigationProperty Name="AdminUser" Relationship="Self.FK__AdminUser__id_ad__37A5467C" FromRole="Users" ToRole="AdminUser" />
+  </EntityType>
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="id_admin" />
+    </Key>
+    <Property Name="id_admin" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__AdminUser__id_ad__37A5467C" FromRole="AdminUser" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__Cerf__id_lesson__4BAC3F29">
+    <End Role="Lessons" Type="Self.Lesson" Multiplicity="0..1" />
+    <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="NGUOIDUNG">
-        <PropertyRef Name="USERNAME" />
+      <Principal Role="Lessons">
+        <PropertyRef Name="id_lesson" />
       </Principal>
-      <Dependent Role="BAIHOC">
-        <PropertyRef Name="NGUOIDANG" />
+      <Dependent Role="Cerf">
+        <PropertyRef Name="id_lesson" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="BH_NH_FK">
-    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
-    <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="*" />
+  <Association Name="FK__Cerf__id_user__4AB81AF0">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="NGUOIDUNG">
-        <PropertyRef Name="USERNAME" />
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
       </Principal>
-      <Dependent Role="BAIHOC">
-        <PropertyRef Name="NGUOIHOC" />
+      <Dependent Role="Cerf">
+        <PropertyRef Name="id_user" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="KH_BH_FK">
-    <End Role="BAIHOC" Type="Self.BAIHOC" Multiplicity="0..1" />
-    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+  <Association Name="FK__Courses__subscri__3A81B327">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="BAIHOC">
-        <PropertyRef Name="ID" />
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
       </Principal>
-      <Dependent Role="KHOAHOC">
-        <PropertyRef Name="BAIHOC" />
+      <Dependent Role="Courses">
+        <PropertyRef Name="subscriber_user" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="KH_NH_FK">
-    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
-    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+  <Association Name="FK__Feedback__id_cou__44FF419A">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="NGUOIDUNG">
-        <PropertyRef Name="USERNAME" />
+      <Principal Role="Courses">
+        <PropertyRef Name="id_course" />
       </Principal>
-      <Dependent Role="KHOAHOC">
-        <PropertyRef Name="NGUOIHOC" />
+      <Dependent Role="Feedback">
+        <PropertyRef Name="id_course" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TT_FK">
-    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
-    <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
+  <Association Name="FK__Lessons__id_cour__3E52440B">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
+    <End Role="Lessons" Type="Self.Lesson" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="NGUOIDUNG">
-        <PropertyRef Name="USERNAME" />
+      <Principal Role="Courses">
+        <PropertyRef Name="id_course" />
       </Principal>
-      <Dependent Role="THANHTOAN">
-        <PropertyRef Name="USERNAMEOWNER" />
+      <Dependent Role="Lessons">
+        <PropertyRef Name="id_course" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SPACECOURSE_DBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="BAIHOCs" EntityType="Self.BAIHOC" />
-    <EntitySet Name="KHOAHOCs" EntityType="Self.KHOAHOC" />
-    <EntitySet Name="NGUOIDUNGs" EntityType="Self.NGUOIDUNG" />
-    <EntitySet Name="THANHTOANs" EntityType="Self.THANHTOAN" />
-    <AssociationSet Name="BH_FK" Association="Self.BH_FK">
-      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
-      <End Role="BAIHOC" EntitySet="BAIHOCs" />
+  <Association Name="FK__Feedback__id_use__440B1D61">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lessons__id_user__3D5E1FD2">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Lessons" Type="Self.Lesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pay__id_user__47DBAE45">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Pay" Type="Self.Pay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Pay">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Services__id_use__412EB0B6">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Services" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AdminUser__id_ad__37A5467C">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="AdminUser">
+        <PropertyRef Name="id_admin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SPACECOURSE" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cerfs" EntityType="Self.Cerf" />
+    <EntitySet Name="Courses" EntityType="Self.Cours" />
+    <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
+    <EntitySet Name="Lessons" EntityType="Self.Lesson" />
+    <EntitySet Name="Pays" EntityType="Self.Pay" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUser" />
+    <AssociationSet Name="FK__Cerf__id_lesson__4BAC3F29" Association="Self.FK__Cerf__id_lesson__4BAC3F29">
+      <End Role="Lessons" EntitySet="Lessons" />
+      <End Role="Cerf" EntitySet="Cerfs" />
     </AssociationSet>
-    <AssociationSet Name="BH_NH_FK" Association="Self.BH_NH_FK">
-      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
-      <End Role="BAIHOC" EntitySet="BAIHOCs" />
+    <AssociationSet Name="FK__Cerf__id_user__4AB81AF0" Association="Self.FK__Cerf__id_user__4AB81AF0">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Cerf" EntitySet="Cerfs" />
     </AssociationSet>
-    <AssociationSet Name="KH_BH_FK" Association="Self.KH_BH_FK">
-      <End Role="BAIHOC" EntitySet="BAIHOCs" />
-      <End Role="KHOAHOC" EntitySet="KHOAHOCs" />
+    <AssociationSet Name="FK__Courses__subscri__3A81B327" Association="Self.FK__Courses__subscri__3A81B327">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Courses" EntitySet="Courses" />
     </AssociationSet>
-    <AssociationSet Name="KH_NH_FK" Association="Self.KH_NH_FK">
-      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
-      <End Role="KHOAHOC" EntitySet="KHOAHOCs" />
+    <AssociationSet Name="FK__Feedback__id_cou__44FF419A" Association="Self.FK__Feedback__id_cou__44FF419A">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Feedback" EntitySet="Feedbacks" />
     </AssociationSet>
-    <AssociationSet Name="TT_FK" Association="Self.TT_FK">
-      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
-      <End Role="THANHTOAN" EntitySet="THANHTOANs" />
+    <AssociationSet Name="FK__Lessons__id_cour__3E52440B" Association="Self.FK__Lessons__id_cour__3E52440B">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedback__id_use__440B1D61" Association="Self.FK__Feedback__id_use__440B1D61">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Feedback" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lessons__id_user__3D5E1FD2" Association="Self.FK__Lessons__id_user__3D5E1FD2">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pay__id_user__47DBAE45" Association="Self.FK__Pay__id_user__47DBAE45">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Pay" EntitySet="Pays" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Services__id_use__412EB0B6" Association="Self.FK__Services__id_use__412EB0B6">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AdminUser__id_ad__37A5467C" Association="Self.FK__AdminUser__id_ad__37A5467C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AdminUser" EntitySet="AdminUsers" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

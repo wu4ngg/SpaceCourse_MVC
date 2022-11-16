@@ -1,0 +1,118 @@
+﻿@model SpaceCourse.Models.User
+
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
+}
+<style>
+    .register-main{
+        animation: none;
+        backdrop-filter: none;
+        z-index: 2;
+    }
+    .err_msg{
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+</style>
+<div class="register-main visible" id="register1">
+    <div class="register-wrap">
+        <div class="wrap-left">
+            <div class="left_img-wrap">
+                <div class="left_img-desc">
+                    <h1>Chào mừng đến với SpaceCourse.</h1>
+                    <p>Đăng ký để</p>
+                    <ul>
+                        <li>Nhận được các cập nhật khóa học</li>
+                        <li>Mua và lưu khóa học</li>
+                        <li>Nhận gói Premium miễn phí 3 tháng.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-right">
+                @using (Html.BeginForm("Main", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+            <div class="register-forms">
+                    <div class="email_form">
+                        <div class="email_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;"
+                                   class="ti-email"></i> Email:
+                            </h4>
+                        </div>
+                        @Html.TextBoxFor(m => m.emai, new { @class = "form_text", placeholder = "example@domain.com" })
+                        <p class="err_msg">@Html.ValidationMessageFor(m => m.emai)</p>
+                    </div>
+                    <div class="username_form">
+                        <div class="username_form-head">
+                            <h4 class="register-forms_input">
+                                <i style="padding-right: 2px;" class="ti-user"></i>
+                                User Name:
+                            </h4>
+                        </div>
+                        @Html.TextBoxFor(m => m.user_name, new { @class = "form_text", placeholder = "Từ 4-20 ký tự, không cách và ký tự đặc biệt" })
+                        <p class="err_msg">@Html.ValidationMessageFor(m => m.user_name)</p>
+                    </div>
+                    <div class="passwd_form">
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-key"></i> Mật Khẩu:
+                                </h4>
+                            </div>
+                            @Html.PasswordFor(m => m.user_password, new { @class = "form_text" })
+                            <p class="err_msg" style="text-align: left; margin-bottom: 10px;">@Html.ValidationMessageFor(m => m.user_password)</p>
+
+                        </div>
+                        <div class="passwd_form-input">
+                            <div class="passwd_form-head">
+                                <h4 class="register-forms_input">
+                                    <i style="padding-right: 2px;"
+                                       class="ti-unlock"></i> Nhập Lại Mật Khẩu:
+                                </h4>
+                            </div>
+                            @Html.PasswordFor(m => m.re_password, new { @class = "form_text" })
+                            <p class="err_msg">@Html.ValidationMessageFor(m => m.re_password)</p>
+                        </div>
+                    </div>
+                    <p style="text-align: left">Mật khẩu phải thỏa điều kiện sau</p>
+                    <ul style="padding-left: 25px">
+                        <li>Phải dài hơn 8 ký từ</li>
+                        <li>Phải có ít nhất 1 chữ in hoa và 1 chữ in thường</li>
+                        <li>Phải có ít nhất 1 số</li>
+                    </ul>
+                    <div class="agree_form">
+                        <label class="chkbox_container">
+                            Tôi đồng ý với <a href="#">Điều khoản</a>
+                            @Html.CheckBoxFor(m => m.accept_eula)
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="chkbox_container">
+                            Gửi tôi cập nhật về những khóa học của tôi.
+                            <input type="checkbox" placeholder="*************">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="btn_wrapper">
+                            <div>
+                                <input type="submit" class="btn_createacc" value="Register">
+                                <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
+                                <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+            </div>
+                }
+        </div>
+    </div>
+    <div></div>
+</div>
+<div class="header-background">
+    <video loop="loop" autoplay="autoplay" playsinline muted="muted" class="vid"
+           src="https://v.pinimg.com/videos/mc/720p/a0/01/d0/a001d02fae1436c3139a74f39343e474.mp4">
+        This browser doesnt support video playback
+    </video>
+</div>
+
