@@ -4,6 +4,8 @@
     ViewBag.Title = "Main";
     Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
 }
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <style>
     .register-main{
         animation: none;
@@ -13,6 +15,24 @@
     .err_msg{
         font-weight: bold;
         margin-bottom: 10px;
+        
+    }
+    .btn_navigation{
+        padding: 0.5rem;
+        margin: auto 0;
+        border: none;
+        background-color: #7272727a;
+        border-radius: 50%;
+        width: auto !important; 
+    }
+    .btn_createacc {
+        margin: auto 0;
+    }
+    .btn_actions{
+        display: flex;
+        margin: 10px 0;
+        gap: 15px;
+        justify-content: center;
     }
 </style>
 <div class="register-main visible" id="register1">
@@ -85,22 +105,24 @@
                     </ul>
                     <div class="agree_form">
                         <div class="btn_wrapper">
-                            <div>
-                                <input type="button" class="btn_createacc" value="Tiếp" onclick="ChangePage('basic', 'advanced')">
-                                <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
-                                <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
+                        <div>
+                            <div class="btn_actions">
+                                <input type="button" class="btn_navigation material-icons" onclick="ChangePage('basic', 'advanced')" value="chevron_right">
+                                <div></div>
                             </div>
-                            <div></div>
+                            <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
+                            <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
                         </div>
+                        <div></div>
+                    </div>
                     </div>
                 </div>
                 <div class="register-forms" style="display: none" id="advanced">
-                    <h2>Chỉ còn vài bước nữa là bạn đã là thành viên của SPACECOURSE!</h2>
                     <div class="name_form">
                         <div class="name_form-head">
                             <h4 class="register-forms_input">
                                 <i style="padding-right: 2px;"
-                                   class="ti-email"></i> Họ Tên:
+                                   class="ti-email"></i> Chúng tôi nên gọi bạn là gì?:
                             </h4>
                         </div>
                         @Html.TextBoxFor(m => m.name_user, new { @class = "form_text" })
@@ -129,7 +151,10 @@
                         </label>
                         <div class="btn_wrapper">
                             <div>
-                                <input type="submit" class="btn_createacc" value="Đăng ký" />
+                                <div class="btn_actions">
+                                    <input type="button" class="btn_navigation material-icons" onclick="ChangePage('advanced', 'basic')" value="chevron_left">            
+                                    <input type="submit" class="btn_createacc" value="Đăng ký" />
+                                    </div>
                                 <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
                                 <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
                             </div>
