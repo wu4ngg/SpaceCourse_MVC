@@ -8,7 +8,7 @@ namespace SpaceCourse.Controllers
 {
     public class CoursePageController : Controller
     {
-        SPACECOURSE_DB db = new SPACECOURSE_DB();
+        SpaceCourseDB db = new SpaceCourseDB();
         // GET: CoursePage
         public ActionResult Home(int id)
         {

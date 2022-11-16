@@ -16,7 +16,7 @@ namespace SpaceCourse.Models
     {
         public User()
         {
-            this.Cerfs = new HashSet<Cerf>();
+            this.Certificates = new HashSet<Certificate>();
             this.Courses = new HashSet<Cours>();
             this.Feedbacks = new HashSet<Feedback>();
             this.Lessons = new HashSet<Lesson>();
@@ -30,9 +30,8 @@ namespace SpaceCourse.Models
         public string sdt { get; set; }
         public string emai { get; set; }
         public string user_name { get; set; }
-        public string profile_pic { get; set; }
     
-        public virtual ICollection<Cerf> Cerfs { get; set; }
+        public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual ICollection<Cours> Courses { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Lesson> Lessons { get; set; }

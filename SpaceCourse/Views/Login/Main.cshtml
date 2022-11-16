@@ -4,10 +4,10 @@
     ViewBag.Title = "Main";
     Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
 }
-
-<div class="main-login ">
+<link href="~/Content/Style/style.css" rel="stylesheet" />
+<div class="main-login">
     <div class="searchdialog visible" id="sd">
-        <div class="searchdialog-contain">
+        <div class="searchdialog-contain ">
             <div class="logindialog">
                 <div id="title">
                     <div class="sidebar"></div>
@@ -23,12 +23,13 @@
                             </div>
                             <div id="login">
                                 <form class="frm">
-                                    @Html.TextBoxFor(m => m.emai, new { @class = "login_text", placeholder = "example@domain.com" })
-                                    @Html.PasswordFor(m => m.user_password, new { @class = "login_text" })
+                                    @Html.TextBoxFor(m => m.emai, new { @class = "form_text", placeholder = "example@domain.com" })
+                                    @Html.PasswordFor(m => m.user_password, new { @class = "form_text" })
                                 </form>
                             </div>
                             <div class="frm_login_btn">
-                                <input type="submit" value="Login" />
+                                <input type="submit" value="Login" class="btnsubmit" />
+
                             </div>
                             <a href="#">Quên mật khẩu?</a>
                             <div class="frm_login_forgot_noacc">
@@ -46,4 +47,3 @@
     </div>
 </div>
 <script src="~/Content/script/main.js"></script>
-<script src="~/Content/script/info.js"></script>

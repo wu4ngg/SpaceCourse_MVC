@@ -224,7 +224,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SpaceCourseDB" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SpaceCourseDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Certificates" EntityType="Self.Certificate" />
     <EntitySet Name="Courses" EntityType="Self.Cours" />
     <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />

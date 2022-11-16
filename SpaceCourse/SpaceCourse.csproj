@@ -139,7 +139,7 @@
     <Compile Include="Models\AdminUser.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cerf.cs">
+    <Compile Include="Models\Certificate.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cours.cs">
@@ -284,11 +284,11 @@
     <Content Include="Views\Forum\Home.cshtml" />
     <Content Include="Views\CoursePage\Home.cshtml" />
     <Content Include="Views\CoursePage\Header.cshtml" />
+    <Content Include="Views\Login\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

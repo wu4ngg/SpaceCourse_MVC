@@ -9,7 +9,7 @@ namespace SpaceCourse.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        SpaceCourseEntities1 db = new SpaceCourseEntities1();
+        SpaceCourseDB db = new SpaceCourseDB();
         public ActionResult Main()
         {
             return View();

@@ -16,7 +16,7 @@ namespace SpaceCourse.Models
     {
         public Lesson()
         {
-            this.Cerfs = new HashSet<Cerf>();
+            this.Certificates = new HashSet<Certificate>();
         }
     
         public int id_lesson { get; set; }
@@ -27,7 +27,7 @@ namespace SpaceCourse.Models
         public string video_lesson { get; set; }
         public Nullable<int> id_course { get; set; }
     
-        public virtual ICollection<Cerf> Cerfs { get; set; }
+        public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual Cours Cours { get; set; }
         public virtual User User { get; set; }
     }
