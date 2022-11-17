@@ -8,7 +8,7 @@ namespace SpaceCourse.Controllers
 {
     public class RegisterController : Controller
     {
-        SPACECOURSE_DB db = new SPACECOURSE_DB();   
+        SPACECOURSE db = new SPACECOURSE();   
         // GET: Register
         public ActionResult Main()
         {

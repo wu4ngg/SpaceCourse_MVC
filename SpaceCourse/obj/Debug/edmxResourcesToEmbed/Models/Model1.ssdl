@@ -48,7 +48,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
     <Property Name="process" Type="float" />
     <Property Name="id_user" Type="int" />
     <Property Name="name_lesson" Type="nvarchar" MaxLength="255" />
-    <Property Name="description" Type="nvarchar" MaxLength="2048" />
+    <Property Name="description" Type="nvarchar" MaxLength="1" />
     <Property Name="video_lesson" Type="varchar" MaxLength="1024" />
     <Property Name="id_course" Type="int" />
   </EntityType>
@@ -87,7 +87,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
     <Property Name="user_name" Type="varchar" MaxLength="255" />
     <Property Name="profile_pic" Type="varchar" MaxLength="255" />
   </EntityType>
-  <Association Name="FK__AdminUser__id_ad__24927208">
+  <Association Name="FK__AdminUser__id_ad__37A5467C">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -99,7 +99,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cerf__id_lesson__38996AB5">
+  <Association Name="FK__Cerf__id_lesson__4BAC3F29">
     <End Role="Lessons" Type="Self.Lessons" Multiplicity="0..1" />
     <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
     <ReferentialConstraint>
@@ -111,7 +111,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cerf__id_user__37A5467C">
+  <Association Name="FK__Cerf__id_user__4AB81AF0">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
     <ReferentialConstraint>
@@ -123,7 +123,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Courses__subscri__276EDEB3">
+  <Association Name="FK__Courses__subscri__3A81B327">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
     <ReferentialConstraint>
@@ -135,7 +135,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Feedback__id_cou__31EC6D26">
+  <Association Name="FK__Feedback__id_cou__44FF419A">
     <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
     <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
     <ReferentialConstraint>
@@ -147,7 +147,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Feedback__id_use__30F848ED">
+  <Association Name="FK__Feedback__id_use__440B1D61">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
     <ReferentialConstraint>
@@ -159,7 +159,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Lessons__id_cour__2B3F6F97">
+  <Association Name="FK__Lessons__id_cour__3E52440B">
     <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
     <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
     <ReferentialConstraint>
@@ -171,7 +171,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Lessons__id_user__2A4B4B5E">
+  <Association Name="FK__Lessons__id_user__3D5E1FD2">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
     <ReferentialConstraint>
@@ -183,7 +183,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Pay__id_user__34C8D9D1">
+  <Association Name="FK__Pay__id_user__47DBAE45">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Pay" Type="Self.Pay" Multiplicity="*" />
     <ReferentialConstraint>
@@ -195,7 +195,7 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Services__id_use__2E1BDC42">
+  <Association Name="FK__Services__id_use__412EB0B6">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Services" Type="Self.Services" Multiplicity="*" />
     <ReferentialConstraint>
@@ -220,43 +220,43 @@ warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a prim
 [AdminUser].[id_admin] AS [id_admin]
 FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__AdminUser__id_ad__24927208" Association="Self.FK__AdminUser__id_ad__24927208">
+    <AssociationSet Name="FK__AdminUser__id_ad__37A5467C" Association="Self.FK__AdminUser__id_ad__37A5467C">
       <End Role="Users" EntitySet="Users" />
       <End Role="AdminUser" EntitySet="AdminUser" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cerf__id_lesson__38996AB5" Association="Self.FK__Cerf__id_lesson__38996AB5">
+    <AssociationSet Name="FK__Cerf__id_lesson__4BAC3F29" Association="Self.FK__Cerf__id_lesson__4BAC3F29">
       <End Role="Lessons" EntitySet="Lessons" />
       <End Role="Cerf" EntitySet="Cerf" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cerf__id_user__37A5467C" Association="Self.FK__Cerf__id_user__37A5467C">
+    <AssociationSet Name="FK__Cerf__id_user__4AB81AF0" Association="Self.FK__Cerf__id_user__4AB81AF0">
       <End Role="Users" EntitySet="Users" />
       <End Role="Cerf" EntitySet="Cerf" />
     </AssociationSet>
-    <AssociationSet Name="FK__Courses__subscri__276EDEB3" Association="Self.FK__Courses__subscri__276EDEB3">
+    <AssociationSet Name="FK__Courses__subscri__3A81B327" Association="Self.FK__Courses__subscri__3A81B327">
       <End Role="Users" EntitySet="Users" />
       <End Role="Courses" EntitySet="Courses" />
     </AssociationSet>
-    <AssociationSet Name="FK__Feedback__id_cou__31EC6D26" Association="Self.FK__Feedback__id_cou__31EC6D26">
+    <AssociationSet Name="FK__Feedback__id_cou__44FF419A" Association="Self.FK__Feedback__id_cou__44FF419A">
       <End Role="Courses" EntitySet="Courses" />
       <End Role="Feedback" EntitySet="Feedback" />
     </AssociationSet>
-    <AssociationSet Name="FK__Feedback__id_use__30F848ED" Association="Self.FK__Feedback__id_use__30F848ED">
+    <AssociationSet Name="FK__Feedback__id_use__440B1D61" Association="Self.FK__Feedback__id_use__440B1D61">
       <End Role="Users" EntitySet="Users" />
       <End Role="Feedback" EntitySet="Feedback" />
     </AssociationSet>
-    <AssociationSet Name="FK__Lessons__id_cour__2B3F6F97" Association="Self.FK__Lessons__id_cour__2B3F6F97">
+    <AssociationSet Name="FK__Lessons__id_cour__3E52440B" Association="Self.FK__Lessons__id_cour__3E52440B">
       <End Role="Courses" EntitySet="Courses" />
       <End Role="Lessons" EntitySet="Lessons" />
     </AssociationSet>
-    <AssociationSet Name="FK__Lessons__id_user__2A4B4B5E" Association="Self.FK__Lessons__id_user__2A4B4B5E">
+    <AssociationSet Name="FK__Lessons__id_user__3D5E1FD2" Association="Self.FK__Lessons__id_user__3D5E1FD2">
       <End Role="Users" EntitySet="Users" />
       <End Role="Lessons" EntitySet="Lessons" />
     </AssociationSet>
-    <AssociationSet Name="FK__Pay__id_user__34C8D9D1" Association="Self.FK__Pay__id_user__34C8D9D1">
+    <AssociationSet Name="FK__Pay__id_user__47DBAE45" Association="Self.FK__Pay__id_user__47DBAE45">
       <End Role="Users" EntitySet="Users" />
       <End Role="Pay" EntitySet="Pay" />
     </AssociationSet>
-    <AssociationSet Name="FK__Services__id_use__2E1BDC42" Association="Self.FK__Services__id_use__2E1BDC42">
+    <AssociationSet Name="FK__Services__id_use__412EB0B6" Association="Self.FK__Services__id_use__412EB0B6">
       <End Role="Users" EntitySet="Users" />
       <End Role="Services" EntitySet="Services" />
     </AssociationSet>
