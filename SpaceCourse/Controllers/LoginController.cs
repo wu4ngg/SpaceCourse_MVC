@@ -9,7 +9,7 @@ namespace SpaceCourse.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        SpaceCourseDB db = new SpaceCourseDB();
+        SPACECOURSE_DB1 db = new SPACECOURSE_DB1();
         public ActionResult Main()
         {
             return View();
@@ -26,8 +26,7 @@ namespace SpaceCourse.Controllers
             else
             {
                 db.Configuration.ValidateOnSaveEnabled = false;
-                Session["ID"] = _user.id_user;
-                Session["PasswordUser"] = _user.user_password;
+                Session["ID"] = check.id_user;
                 return RedirectToAction("Index", "Home");
             }
         }

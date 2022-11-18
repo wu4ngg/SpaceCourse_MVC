@@ -1,0 +1,71 @@
+﻿@model SpaceCourse.Models.Service
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutKhac.cshtml";
+}
+<link href="~/Content/Style/service.css" rel="stylesheet" />
+<div class="plan-main">
+    <div class="title_wrapper">
+        <h1>SpaceCourse PREMIUM</h1>
+        <p>
+            Bạn đã sẵn sàng học chưa? Nếu muốn trải nghiệm thử thì đừng lo, các gói Premium đều kèm 1 tháng dùng
+            thử.
+        </p>
+    </div>
+    <div class="plans_wrapper">
+        <div class="plans">
+            <div class="plans_annual plan-card">
+                <h2>Year</h2>
+                <h1>49.99<span class="currency">$</span></h1>
+                <h3>Các đặc quyền</h3>
+                <ul>
+                    <li>Các đặc quyền của Premium.</li>
+                    <li>Tiết kiệm 25% so với gói tháng.</li>
+                </ul>
+                <div class="button-wrap">
+                    <div></div>
+                    <button>Đăng ký</button>
+                </div>
+            </div>
+            <div class="plans_monthly plan-card">
+                <h2>Month</h2>
+                <p>BEST SELLER</p>
+                <h1>5.99<span class="currency">$</span></h1>
+                <h3>Các đặc quyền</h3>
+                <ul>
+                    <li>Mở khóa tất cả các khóa học nâng cao.</li>
+                    <li>Tải video về, xem offline không giới hạn.</li>
+                    <li>Ủng hộ nhà phát triển.</li>
+                    <li>Thêm tính năng đăng tải bài học.</li>
+                    <li>Xem mã nguồn của các ví dụ trong bài học.</li>
+                </ul>
+                <footer class="button-wrap">
+                    <button onclick="showPaymentInfo('5.99 / tháng')">Đăng ký</button>
+                </footer>
+            </div>
+            <div class="plans_forever plan-card">
+                <h2>Forever</h2>
+                <h1>399 <span class="currency">$</span></h1>
+                <h3>Các đặc quyền</h3>
+                <ul>
+                    <li>Tất cả các đặc quyền Premium.</li>
+                    <li>
+                        Truy cập vào toàn bộ mã nguồn của
+                        trang web.
+                    </li>
+                </ul>
+                <div class="button-wrap">
+                    <div></div>
+                    <button>Đăng ký</button>
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+    <div id="free">
+        <p>Bạn chỉ muốn học căn bản? <a href="#">Nhấn vào đây để tiếp tục với gói miễn phí.</a></p>
+    </div>
+</div>
+<script src="~/Content/script/main.js"></script>
+<script src="~/Content/script/info.js"></script>

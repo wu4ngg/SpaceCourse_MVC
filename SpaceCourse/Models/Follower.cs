@@ -12,22 +12,12 @@ namespace SpaceCourse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Lesson
+    public partial class Follower
     {
-        public Lesson()
-        {
-            this.Cerfs = new HashSet<Cerf>();
-        }
-    
-        public int id_lesson { get; set; }
-        public Nullable<double> process { get; set; }
+        public int id { get; set; }
         public Nullable<int> id_user { get; set; }
-        public string name_lesson { get; set; }
-        public string description { get; set; }
-        public string video_lesson { get; set; }
         public Nullable<int> id_course { get; set; }
     
-        public virtual ICollection<Cerf> Cerfs { get; set; }
         public virtual Cours Cours { get; set; }
         public virtual User User { get; set; }
     }

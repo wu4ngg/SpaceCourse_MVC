@@ -12,7 +12,7 @@ namespace SpaceCourse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Certificate
+    public partial class Cerf
     {
         public int id_cer { get; set; }
         public Nullable<System.DateTime> ngaycap { get; set; }

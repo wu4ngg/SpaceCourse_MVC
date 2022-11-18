@@ -133,47 +133,52 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminUser.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Certificate.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\Cerf.cs">
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cours.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedback.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Follower.cs">
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Lesson.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Pay.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Service.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpaceCourseDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceCourseDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpaceCourseDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpaceCourseDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SpaceCourseDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,10 +188,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\background.mp4" />
+    <Content Include="Content\img\CSS_CL.svg" />
     <Content Include="Content\img\Dark_logo.png" />
     <Content Include="Content\img\favicon.png" />
     <Content Include="Content\img\Frame_7.png" />
     <Content Include="Content\img\galaxy-space.gif" />
+    <Content Include="Content\img\HTML_CL.svg" />
     <Content Include="Content\img\imgLogin.gif" />
     <Content Include="Content\img\img_bg.png" />
     <Content Include="Content\img\JS_CL.svg" />
@@ -212,6 +219,7 @@
     <Content Include="Content\img\planets\WAPI.svg" />
     <Content Include="Content\img\RegisterBG.png" />
     <Content Include="Content\img\SpaceCourse.mp4" />
+    <Content Include="Content\img\WAPI_CL.svg" />
     <Content Include="Content\script\info.js" />
     <Content Include="Content\script\main.js" />
     <Content Include="Content\Style\about-page.css" />
@@ -221,31 +229,33 @@
     <Content Include="Content\Style\forum.css" />
     <Content Include="Content\Style\responsive.css" />
     <Content Include="Content\Style\sandbox.css" />
+    <Content Include="Content\Style\service.css" />
     <Content Include="Content\Style\style.css" />
     <Content Include="Content\Style\styleold.css" />
+    <Content Include="Content\Style\videocourse.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\SpaceCourseDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
+      <LastGenOutput>SpaceCourseDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\SpaceCourseDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
+      <LastGenOutput>SpaceCourseDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\img\plane-icon.webp" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\SpaceCourseDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>SpaceCourseDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\SpaceCourseDB.edmx.diagram">
+      <DependentUpon>SpaceCourseDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -282,9 +292,13 @@
     <Content Include="Views\Register\Complete.cshtml" />
     <Content Include="Views\Forum\ForumHome.cshtml" />
     <Content Include="Views\Forum\Home.cshtml" />
-    <Content Include="Views\CoursePage\Home.cshtml" />
-    <Content Include="Views\CoursePage\Header.cshtml" />
     <Content Include="Views\Login\Main.cshtml" />
+    <Content Include="Views\User\UserArea.cshtml" />
+    <Content Include="Views\CoursePage\Home.cshtml" />
+    <Content Include="Views\CoursePage\Lessions.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\User\UserMenu.cshtml" />
+    <Content Include="Views\CoursePage\FollowButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

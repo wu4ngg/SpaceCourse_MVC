@@ -17,6 +17,7 @@ namespace SpaceCourse.Models
         public Cours()
         {
             this.Feedbacks = new HashSet<Feedback>();
+            this.Followers = new HashSet<Follower>();
             this.Lessons = new HashSet<Lesson>();
         }
     
@@ -31,6 +32,7 @@ namespace SpaceCourse.Models
     
         public virtual User User { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<Follower> Followers { get; set; }
         public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }

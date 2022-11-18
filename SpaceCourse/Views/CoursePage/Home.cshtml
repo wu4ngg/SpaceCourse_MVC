@@ -1,0 +1,96 @@
+﻿@model SpaceCourse.Models.Cours
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
+}
+
+<link href="~/Content/Style/coursepage.css" rel="stylesheet" />
+<style>
+    .info_content_btn {
+        outline: 4px @Model.accent_color solid !important;
+        box-shadow: 0 4px 24px @Model.accent_color !important;
+    }
+    body {
+        background: linear-gradient(180.61deg, @(Model.accent_color)6b -6.97%, rgba(254, 181, 114, 0) 99.47%), #FFFFFF;
+    }
+    .info_HocLai_btn{
+        outline: 4px @Model.accent_color solid !important;
+        box-shadow: 0 4px 24px @Model.accent_color !important;
+    }
+    .test_wrap-inner{
+        background-color: @Model.accent_color;
+                box-shadow: 0 4px 24px @Model.accent_color !important;
+    }
+</style>
+<div class="body-page">
+    <!-- infor -->
+    <div class="body-page_info">
+        <div class=" page_info_img">
+            <img src="@Url.Content(Model.img_course)" alt="">
+            <div class="stack-head_header">
+                <h1>@Html.DisplayFor(m => m.name_course)</h1>
+                <span>Co ban</span>
+            </div>
+            <div class="test_wrap-bar">
+                <div class="test_wrap-inner" style="width: @Model.process%"></div>
+            </div>
+            <div class="perc">
+                <p>@Html.DisplayFor(m => m.process)%</p>
+            </div>
+            <div class="page_info_content">
+                <input type="button" class="info_content_btn" value="Tiếp tục">
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="info_wrapper">
+                @if (Session["ID"] == null)
+                {
+
+
+<div class="page_info_content">
+                    <input type="button" class="info_content_btn" value="Theo dõi">
+                    <div></div>
+                </div>
+                }
+                else
+                {
+                    @Html.Action("FollowButton", "CoursePage", new { id = ViewBag.Id, user = int.Parse(Session["ID"].ToString()) });
+                }
+                <div class="page-info_wrap">
+                    <div class="page_info page_info_follow"><span><b>Lượt theo dõi</b></span></div>
+                    <div class="page_info page_info_view"><span> Lượt xem <b> 594.391 </b> </span></div>
+                    <div class="page_info page_info_total"><span>Tổng số bài : <b> 165</b></span></div>
+                    <div class="page_info page_info_time"><span>Tổng số giờ :<b> 194 H</b></span></div>
+                </div>
+            </div>
+            @Html.Action("Lessions", "CoursePage", new {id = 
+ViewBag.Id})
+            <div class="desc">
+                <h3>Giới thiệu</h3>
+                <p>@Model.description</p>
+                <h3>Bạn sẽ học được những gì từ khóa học này?</h3>
+                <ul>
+                    <li>Nguyên lý hoạt động cơ bản của Javascript</li>
+                    <li>Cách sử dụng Javascript trong HTML</li>
+                    <li>Cách để sử dụng Javascript hiệu quả</li>
+                </ul>
+                <h3>Muốn học nâng cao?</h3>
+                <div class="test_wrap-btn flex-wrap">
+                    <input type="button" class="info_HocLai_btn" value="Đăng ký premium">
+                    <p>Hoặc</p>
+                    <input type="button" class="info_HocLai_btn" value="Mua khóa học">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-page_stack">
+        <!-- head -->
+        <div class="page_stack-head">
+
+
+        </div>
+        <!-- test -->
+
+    </div>
+</div>

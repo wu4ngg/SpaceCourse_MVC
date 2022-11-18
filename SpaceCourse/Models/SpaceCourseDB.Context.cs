@@ -13,10 +13,10 @@ namespace SpaceCourse.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SpaceCourseDB : DbContext
+    public partial class SPACECOURSE_DB1 : DbContext
     {
-        public SpaceCourseDB()
-            : base("name=SpaceCourseDB")
+        public SPACECOURSE_DB1()
+            : base("name=SPACECOURSE_DB1")
         {
         }
     
@@ -25,7 +25,7 @@ namespace SpaceCourse.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Certificate> Certificates { get; set; }
+        public DbSet<Cerf> Cerfs { get; set; }
         public DbSet<Cours> Courses { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
@@ -33,5 +33,6 @@ namespace SpaceCourse.Models
         public DbSet<Service> Services { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<AdminUser> AdminUsers { get; set; }
+        public DbSet<Follower> Followers { get; set; }
     }
 }

@@ -1,0 +1,313 @@
+﻿.service {
+    z-index: 3;
+    color: white;
+    display: flex;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://getellipsis.com/wp-content/uploads/2018/03/header-bg.gif');
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+h1 {
+    color: black;
+}
+
+.plan-main {
+    padding: 2vh 10vw;
+    margin-top: 100px;
+}
+
+.title_wrapper {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+    .title_wrapper h1 {
+        color: black;
+    }
+
+.plans_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.plans {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0px;
+}
+
+.plan-card {
+    margin: auto;
+    border-radius: 16px;
+    padding: 20px 55px;
+    width: 15vw;
+    border: 2px #727272 solid;
+    background-color: white;
+    min-height: 35vh;
+}
+
+    .plan-card ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+        padding: 0 25px;
+    }
+
+    .plan-card h1 {
+        text-align: center;
+        color: black;
+        margin-top: 10px;
+        font-size: 35px;
+    }
+
+    .plan-card h2 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .plan-card h3 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        width: 100%;
+        font-weight: lighter;
+    }
+
+    .plan-card p {
+        text-align: center;
+        margin: 0;
+    }
+
+.monthly-resizable {
+    height: 25vh;
+}
+
+.plans_annual {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    width: 10vw;
+}
+
+.plans_forever {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    width: 10vw;
+}
+
+.monthly-resizable {
+    z-index: 2;
+}
+
+.currency {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.plans_monthly {
+    z-index: 3;
+    min-height: 55vh;
+    border: 4px #7299FE solid;
+    box-shadow: 0 4px 24px #7299FE;
+}
+
+    .plans_monthly button {
+        transition: background-color 0.2s, box-shadow 0.2s, outline 0.2s;
+        outline: 4px #729afe7a solid !important;
+        background-color: #7299FE !important;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 0 4px 24px #7299FE !important;
+        margin-top: 2% !important;
+    }
+
+#free {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+    #free a {
+        font-weight: bold;
+    }
+
+.plan-card button {
+    transition: background-color 0.2s, box-shadow 0.2s, outline 0.2s;
+    margin-top: 5%;
+    padding: 15px 5px;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+    background-color: white;
+    outline: 4px #727272 solid;
+    border-radius: 5px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.534);
+}
+
+.button-wrap {
+    bottom: 0;
+    text-align: center;
+}
+
+    .button-wrap button:hover {
+        outline: 2px #727272 solid !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.534) !important;
+        background-color: white !important;
+        color: black;
+    }
+
+@media only screen and (max-width: 1500px) {
+    .plan-card {
+        padding: 20px 5 5px;
+        min-width: 20vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .plans_annual {
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-right: 2px #727272 solid;
+        width: 10vw;
+    }
+
+    .plans_forever {
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-left: 2px #727272 solid;
+        width: 10vw;
+    }
+
+    .plan-main {
+        padding: 10vw;
+        margin-top: 100px;
+    }
+
+    .plans {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .plan-card {
+        padding: 20px 35px;
+        min-width: 75vw;
+    }
+}
+
+.payment_main {
+    display: none;
+    top: 0;
+    z-index: 5;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.payment_wrapper {
+    animation: showLogin 0.5s;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    display: flex;
+    width: 750px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.payment_left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+    background-image: url("../img/galaxy-space.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 25px;
+    width: 50%;
+}
+
+    .payment_left ul li {
+        margin-left: 25px;
+    }
+
+.payment_right {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    float: right;
+    width: 50%;
+}
+
+    .payment_right h1 {
+        color: black;
+    }
+
+.selection_box {
+    padding: 10px;
+    appearance: unset;
+    border: none;
+    border-bottom: 2px #727272 solid;
+    font-size: 16px;
+}
+
+.lbl_txt {
+    font-weight: bold;
+}
+
+.input_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.txt_input {
+    padding: 10px;
+    appearance: unset;
+    border: none;
+    border-bottom: 2px #727272 solid;
+    font-size: 16px;
+}
+
+.cvv {
+    width: 48%;
+}
+
+.dual_input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.big {
+    font-size: 35px;
+    font-weight: bold;
+    width: 95%;
+    padding: 0;
+}
+
+    .big:disabled {
+        color: black;
+    }
+
+.price {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+    .price h1 {
+        margin: auto 0;
+    }
