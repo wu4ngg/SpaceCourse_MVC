@@ -41,7 +41,7 @@ namespace SpaceCourse.Models
         [MaxLength(20, ErrorMessage = "Username quá dài.")]
         [RegularExpression("^[a-zA-Z0-9!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$", ErrorMessage = "Username chứa ký tự đặc biệt.")]
         public string user_name { get; set; }
-    
+        public string profile_pic { get; set; }
         public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual ICollection<Cours> Courses { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
