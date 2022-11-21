@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\ASUS\OneDrive\Desktop\SpaceCourse_MVC\SpaceCourse\Models\SpaceCourse.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\ASUS\Documents\GitHub\SpaceCourse_MVC\SpaceCourse_MVC\SpaceCourse\Models\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

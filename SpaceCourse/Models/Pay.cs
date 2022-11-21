@@ -23,6 +23,6 @@ namespace SpaceCourse.Models
         public Nullable<int> madv { get; set; }
         public Nullable<int> id_user { get; set; }
     
-        public virtual Users Users { get; set; }
+        public virtual User User { get; set; }
     }
 }

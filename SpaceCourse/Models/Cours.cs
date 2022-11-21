@@ -12,23 +12,25 @@ namespace SpaceCourse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Lessons
+    public partial class Cours
     {
-        public Lessons()
+        public Cours()
         {
-            this.Cerf = new HashSet<Cerf>();
+            this.Feedbacks = new HashSet<Feedback>();
+            this.Lessons = new HashSet<Lesson>();
         }
     
-        public int id_lesson { get; set; }
+        public int id_course { get; set; }
+        public Nullable<int> subscriber_user { get; set; }
+        public byte[] is_premium { get; set; }
         public Nullable<double> process { get; set; }
-        public Nullable<int> id_user { get; set; }
-        public string name_lesson { get; set; }
+        public string name_course { get; set; }
         public string description { get; set; }
-        public string video_lesson { get; set; }
-        public Nullable<int> id_course { get; set; }
+        public string img_course { get; set; }
+        public string accent_color { get; set; }
     
-        public virtual ICollection<Cerf> Cerf { get; set; }
-        public virtual Courses Courses { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }

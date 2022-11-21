@@ -20,7 +20,7 @@ namespace SpaceCourse.Models
         public string content { get; set; }
         public Nullable<int> id_user { get; set; }
     
-        public virtual Courses Courses { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual Cours Cours { get; set; }
+        public virtual User User { get; set; }
     }
 }
