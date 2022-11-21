@@ -9,19 +9,6 @@ USE SPACECOURSE_DB
 -- );
 ALTER TABLE Users
 ADD profile_pic varchar(255)
-ALTER TABLE Users
-ALTER COLUMN profile_pic varchar(255) NULL
-ALTER TABLE Users
-ALTER COLUMN name_user nvarchar(255) NULL
-ALTER TABLE Users
-ALTER COLUMN sdt varchar(255) NULL
-ALTER TABLE Feedback
-ALTER COLUMN Content nvarchar(2048) NULL
-CREATE TABLE Followers(
-    id int IDENTITY(1,1) NOT NULL,
-    id_user int FOREIGN KEY REFERENCES Users(id_user),
-    id_course int FOREIGN KEY REFERENCES Courses(id_course),
-)
 CREATE TABLE Users (
     id_user  int IDENTITY(1,1) NOT NULL,
     name_user nvarchar(255),
@@ -31,10 +18,7 @@ CREATE TABLE Users (
     user_name varchar(255),
     PRIMARY KEY(id_user)
 );
-ALTER TABLE LESSONS
-ALTER COLUMN DESCRIPTION NVARCHAR(2048) NULL
 CREATE TABLE AdminUser (
-    id int IDENTITY(1,1) PRIMARY KEY,
     id_admin int NOT NULL ,
     FOREIGN KEY (id_admin) REFERENCES Users(id_user)
 );

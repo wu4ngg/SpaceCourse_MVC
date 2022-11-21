@@ -13,17 +13,10 @@ namespace SpaceCourse.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-<<<<<<<< HEAD:SpaceCourse/Models/SpaceCourse.Context.cs
     public partial class SPACECOURSE_DBEntities1 : DbContext
     {
         public SPACECOURSE_DBEntities1()
             : base("name=SPACECOURSE_DBEntities1")
-========
-    public partial class SPACECOURSE_DB1 : DbContext
-    {
-        public SPACECOURSE_DB1()
-            : base("name=SPACECOURSE_DB1")
->>>>>>>> e459f9e5a23c95d57734c3c9aa9551fab46b7f8d:SpaceCourse/Models/SpaceCourseDB.Context.cs
         {
         }
     
@@ -32,7 +25,6 @@ namespace SpaceCourse.Models
             throw new UnintentionalCodeFirstException();
         }
     
-<<<<<<<< HEAD:SpaceCourse/Models/SpaceCourse.Context.cs
         public DbSet<Cerf> Cerf { get; set; }
         public DbSet<Courses> Courses { get; set; }
         public DbSet<Feedback> Feedback { get; set; }
@@ -41,16 +33,5 @@ namespace SpaceCourse.Models
         public DbSet<Services> Services { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<AdminUser> AdminUser { get; set; }
-========
-        public DbSet<Cerf> Cerfs { get; set; }
-        public DbSet<Cours> Courses { get; set; }
-        public DbSet<Feedback> Feedbacks { get; set; }
-        public DbSet<Lesson> Lessons { get; set; }
-        public DbSet<Pay> Pays { get; set; }
-        public DbSet<Service> Services { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<AdminUser> AdminUsers { get; set; }
-        public DbSet<Follower> Followers { get; set; }
->>>>>>>> e459f9e5a23c95d57734c3c9aa9551fab46b7f8d:SpaceCourse/Models/SpaceCourseDB.Context.cs
     }
 }

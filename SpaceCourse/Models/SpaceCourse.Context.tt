@@ -2,11 +2,7 @@
 <#@ include file="EF.Utility.CS.ttinclude"#><#@
  output extension=".cs"#><#
 
-<<<<<<<< HEAD:SpaceCourse/Models/SpaceCourse.Context.tt
 const string inputFile = @"SpaceCourse.edmx";
-========
-const string inputFile = @"SpaceCourseDB.edmx";
->>>>>>>> e459f9e5a23c95d57734c3c9aa9551fab46b7f8d:SpaceCourse/Models/SpaceCourseDB.Context.tt
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);
