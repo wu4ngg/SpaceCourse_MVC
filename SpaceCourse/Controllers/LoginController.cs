@@ -9,13 +9,13 @@ namespace SpaceCourse.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        SpaceCourseDB db = new SpaceCourseDB();
+        SPACECOURSE_DBEntities1 db = new SPACECOURSE_DBEntities1();
         public ActionResult Main()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Main(User _user)
+        public ActionResult Main(Users _user)
         {
             var check = db.Users.Where(m => m.emai == _user.emai && m.user_password == _user.user_password).FirstOrDefault();
             if(check == null)

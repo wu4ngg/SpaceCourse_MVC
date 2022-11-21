@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SpaceCourse.Models.Lessons>
+
+
+@foreach (var item in Model)
+{
+    <div class="bai1">
+        <div class="stack-test_wrap">
+            <div class="test_wrap-info">
+                <h3>Bài @item.id_lesson</h3>
+                <div class="test_wrap-info-des">
+                   @item.name_lesson
+                </div>
+            </div>
+
+            <div class="test_wrap-loading">
+                <div class="loading-completed_percent">@item.process %</div>
+            </div>
+            <div class="test_wrap-bar">
+                <div class="test_wrap-inner" style="width: @item.process%"></div>
+            </div>
+            <div class="test_wrap-btn">
+                <input type="button" class="info_HocLai_btn" value="Hoc lai">
+            </div>
+        </div>
+    </div>
+}

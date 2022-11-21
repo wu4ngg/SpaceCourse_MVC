@@ -1,4 +1,4 @@
-﻿@model SpaceCourse.Models.User
+﻿@model SpaceCourse.Models.Users
 
 @{
     ViewBag.Title = "Main";
@@ -39,7 +39,7 @@
     <div class="register-wrap">
         <div class="wrap-left">
             <div class="left_img-wrap">
-                <div class="left_img-desc">
+                @*<div class="left_img-desc">
                     <h1>Chào mừng đến với SpaceCourse.</h1>
                     <p>Đăng ký để</p>
                     <ul>
@@ -47,7 +47,7 @@
                         <li>Mua và lưu khóa học</li>
                         <li>Nhận gói Premium miễn phí 3 tháng.</li>
                     </ul>
-                </div>
+                </div>*@
             </div>
         </div>
         <div class="wrap-right">
@@ -111,7 +111,7 @@
                                 <div></div>
                             </div>
                             <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
-                            <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
+                           @* <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>*@
                         </div>
                         <div></div>
                     </div>
@@ -141,7 +141,7 @@
                     <div class="agree_form">
                         <label class="chkbox_container">
                             Tôi đồng ý với <a href="#">Điều khoản</a>
-                            @Html.CheckBoxFor(m => m.accept_eula)
+                         @*   @Html.CheckBoxFor(m => m.accept_eula)*@
                             <span class="checkmark"></span>
                         </label>
                         <label class="chkbox_container">
@@ -156,7 +156,7 @@
                                     <input type="submit" class="btn_createacc" value="Đăng ký" />
                                     </div>
                                 <p class="p_haveacc">Đã có tài khoản? <a class="btn_wrapper-login">Đăng nhập</a></p>
-                                <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>
+                               @* <p>@Html.ValidationMessageFor(m => m.accept_eula)</p>*@
                             </div>
                             <div></div>
                         </div>

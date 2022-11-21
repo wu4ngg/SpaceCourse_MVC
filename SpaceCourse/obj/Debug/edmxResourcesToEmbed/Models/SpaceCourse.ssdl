@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPACECOURSE_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="id_admin" />
+    </Key>
+    <Property Name="id_admin" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cerf">
+    <Key>
+      <PropertyRef Name="id_cer" />
+    </Key>
+    <Property Name="id_cer" Type="int" Nullable="false" />
+    <Property Name="ngaycap" Type="date" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="id_lesson" Type="int" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="id_course" />
+    </Key>
+    <Property Name="id_course" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subscriber_user" Type="int" />
+    <Property Name="is_premium" Type="binary" MaxLength="1" />
+    <Property Name="process" Type="float" />
+    <Property Name="name_course" Type="nvarchar" MaxLength="255" />
+    <Property Name="description" Type="nvarchar" MaxLength="2048" />
+    <Property Name="img_course" Type="varchar" MaxLength="1024" />
+    <Property Name="accent_color" Type="char" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="id_feedback" />
+    </Key>
+    <Property Name="id_feedback" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+    <Property Name="id_course" Type="int" />
+    <Property Name="content" Type="nvarchar" MaxLength="1" />
+    <Property Name="id_user" Type="int" />
+  </EntityType>
+  <EntityType Name="Lessons">
+    <Key>
+      <PropertyRef Name="id_lesson" />
+    </Key>
+    <Property Name="id_lesson" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="process" Type="float" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="name_lesson" Type="nvarchar" MaxLength="255" />
+    <Property Name="description" Type="nvarchar" MaxLength="1" />
+    <Property Name="video_lesson" Type="varchar" MaxLength="1024" />
+    <Property Name="id_course" Type="int" />
+  </EntityType>
+  <EntityType Name="Pay">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="loaithe" Type="nvarchar" MaxLength="1" />
+    <Property Name="ngaythanhtoan" Type="date" />
+    <Property Name="cvc" Type="int" />
+    <Property Name="expire" Type="date" />
+    <Property Name="sothe" Type="int" />
+    <Property Name="madv" Type="int" />
+    <Property Name="id_user" Type="int" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="id_service" />
+    </Key>
+    <Property Name="id_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_regis" Type="date" />
+    <Property Name="type_service" Type="nvarchar" MaxLength="1" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="price" Type="float" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_user" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_password" Type="varchar" MaxLength="255" />
+    <Property Name="sdt" Type="varchar" MaxLength="255" />
+    <Property Name="emai" Type="varchar" MaxLength="255" />
+    <Property Name="user_name" Type="varchar" MaxLength="255" />
+    <Property Name="profile_pic" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__AdminUser__id_ad__24927208">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="AdminUser">
+        <PropertyRef Name="id_admin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cerf__id_lesson__38996AB5">
+    <End Role="Lessons" Type="Self.Lessons" Multiplicity="0..1" />
+    <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lessons">
+        <PropertyRef Name="id_lesson" />
+      </Principal>
+      <Dependent Role="Cerf">
+        <PropertyRef Name="id_lesson" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cerf__id_user__37A5467C">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Cerf">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses__subscri__276EDEB3">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="subscriber_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Feedback__id_cou__31EC6D26">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="id_course" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="id_course" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Feedback__id_use__30F848ED">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lessons__id_cour__2B3F6F97">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="id_course" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="id_course" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lessons__id_user__2A4B4B5E">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pay__id_user__34C8D9D1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Pay" Type="Self.Pay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Pay">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Services__id_use__2E1BDC42">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SPACECOURSE_DBModelStoreContainer">
+    <EntitySet Name="Cerf" EntityType="Self.Cerf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lessons" EntityType="Self.Lessons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pay" EntityType="Self.Pay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUser" EntityType="Self.AdminUser" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[AdminUser].[id_admin] AS [id_admin]
+FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__AdminUser__id_ad__24927208" Association="Self.FK__AdminUser__id_ad__24927208">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AdminUser" EntitySet="AdminUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cerf__id_lesson__38996AB5" Association="Self.FK__Cerf__id_lesson__38996AB5">
+      <End Role="Lessons" EntitySet="Lessons" />
+      <End Role="Cerf" EntitySet="Cerf" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cerf__id_user__37A5467C" Association="Self.FK__Cerf__id_user__37A5467C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Cerf" EntitySet="Cerf" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses__subscri__276EDEB3" Association="Self.FK__Courses__subscri__276EDEB3">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedback__id_cou__31EC6D26" Association="Self.FK__Feedback__id_cou__31EC6D26">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedback__id_use__30F848ED" Association="Self.FK__Feedback__id_use__30F848ED">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lessons__id_cour__2B3F6F97" Association="Self.FK__Lessons__id_cour__2B3F6F97">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lessons__id_user__2A4B4B5E" Association="Self.FK__Lessons__id_user__2A4B4B5E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pay__id_user__34C8D9D1" Association="Self.FK__Pay__id_user__34C8D9D1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Pay" EntitySet="Pay" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Services__id_use__2E1BDC42" Association="Self.FK__Services__id_use__2E1BDC42">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

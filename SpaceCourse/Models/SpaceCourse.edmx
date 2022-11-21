@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SpaceCourseDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SPACECOURSE_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'SPACECOURSE_DB.dbo.AdminUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AdminUser">
           <Key>
             <PropertyRef Name="id_admin" />
           </Key>
           <Property Name="id_admin" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Certificate">
+        <EntityType Name="Cerf">
           <Key>
             <PropertyRef Name="id_cer" />
           </Key>
@@ -90,8 +90,9 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
           <Property Name="sdt" Type="varchar" MaxLength="255" />
           <Property Name="emai" Type="varchar" MaxLength="255" />
           <Property Name="user_name" Type="varchar" MaxLength="255" />
+          <Property Name="profile_pic" Type="varchar" MaxLength="255" />
         </EntityType>
-        <Association Name="FK__AdminUser__id_ad__25869641">
+        <Association Name="FK__AdminUser__id_ad__24927208">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -103,31 +104,31 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Certifica__id_le__398D8EEE">
+        <Association Name="FK__Cerf__id_lesson__38996AB5">
           <End Role="Lessons" Type="Self.Lessons" Multiplicity="0..1" />
-          <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+          <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lessons">
               <PropertyRef Name="id_lesson" />
             </Principal>
-            <Dependent Role="Certificate">
+            <Dependent Role="Cerf">
               <PropertyRef Name="id_lesson" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Certifica__id_us__38996AB5">
+        <Association Name="FK__Cerf__id_user__37A5467C">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+          <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="id_user" />
             </Principal>
-            <Dependent Role="Certificate">
+            <Dependent Role="Cerf">
               <PropertyRef Name="id_user" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Courses__subscri__286302EC">
+        <Association Name="FK__Courses__subscri__276EDEB3">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -139,7 +140,7 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Feedback__id_cou__32E0915F">
+        <Association Name="FK__Feedback__id_cou__31EC6D26">
           <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
@@ -151,7 +152,7 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Feedback__id_use__31EC6D26">
+        <Association Name="FK__Feedback__id_use__30F848ED">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
@@ -163,7 +164,7 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Lessons__id_cour__2C3393D0">
+        <Association Name="FK__Lessons__id_cour__2B3F6F97">
           <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
           <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
           <ReferentialConstraint>
@@ -175,7 +176,7 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Lessons__id_user__2B3F6F97">
+        <Association Name="FK__Lessons__id_user__2A4B4B5E">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
           <ReferentialConstraint>
@@ -187,7 +188,7 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pay__id_user__35BCFE0A">
+        <Association Name="FK__Pay__id_user__34C8D9D1">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Pay" Type="Self.Pay" Multiplicity="*" />
           <ReferentialConstraint>
@@ -199,7 +200,7 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Services__id_use__2F10007B">
+        <Association Name="FK__Services__id_use__2E1BDC42">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Services" Type="Self.Services" Multiplicity="*" />
           <ReferentialConstraint>
@@ -211,8 +212,8 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SpaceCourseDBModelStoreContainer">
-          <EntitySet Name="Certificate" EntityType="Self.Certificate" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="SPACECOURSE_DBModelStoreContainer">
+          <EntitySet Name="Cerf" EntityType="Self.Cerf" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lessons" EntityType="Self.Lessons" Schema="dbo" store:Type="Tables" />
@@ -224,43 +225,43 @@ warning 6002: The table/view 'SpaceCourseDB.dbo.AdminUser' does not have a prima
 [AdminUser].[id_admin] AS [id_admin]
 FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__AdminUser__id_ad__25869641" Association="Self.FK__AdminUser__id_ad__25869641">
+          <AssociationSet Name="FK__AdminUser__id_ad__24927208" Association="Self.FK__AdminUser__id_ad__24927208">
             <End Role="Users" EntitySet="Users" />
             <End Role="AdminUser" EntitySet="AdminUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__Certifica__id_le__398D8EEE" Association="Self.FK__Certifica__id_le__398D8EEE">
+          <AssociationSet Name="FK__Cerf__id_lesson__38996AB5" Association="Self.FK__Cerf__id_lesson__38996AB5">
             <End Role="Lessons" EntitySet="Lessons" />
-            <End Role="Certificate" EntitySet="Certificate" />
+            <End Role="Cerf" EntitySet="Cerf" />
           </AssociationSet>
-          <AssociationSet Name="FK__Certifica__id_us__38996AB5" Association="Self.FK__Certifica__id_us__38996AB5">
+          <AssociationSet Name="FK__Cerf__id_user__37A5467C" Association="Self.FK__Cerf__id_user__37A5467C">
             <End Role="Users" EntitySet="Users" />
-            <End Role="Certificate" EntitySet="Certificate" />
+            <End Role="Cerf" EntitySet="Cerf" />
           </AssociationSet>
-          <AssociationSet Name="FK__Courses__subscri__286302EC" Association="Self.FK__Courses__subscri__286302EC">
+          <AssociationSet Name="FK__Courses__subscri__276EDEB3" Association="Self.FK__Courses__subscri__276EDEB3">
             <End Role="Users" EntitySet="Users" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Feedback__id_cou__32E0915F" Association="Self.FK__Feedback__id_cou__32E0915F">
+          <AssociationSet Name="FK__Feedback__id_cou__31EC6D26" Association="Self.FK__Feedback__id_cou__31EC6D26">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Feedback" EntitySet="Feedback" />
           </AssociationSet>
-          <AssociationSet Name="FK__Feedback__id_use__31EC6D26" Association="Self.FK__Feedback__id_use__31EC6D26">
+          <AssociationSet Name="FK__Feedback__id_use__30F848ED" Association="Self.FK__Feedback__id_use__30F848ED">
             <End Role="Users" EntitySet="Users" />
             <End Role="Feedback" EntitySet="Feedback" />
           </AssociationSet>
-          <AssociationSet Name="FK__Lessons__id_cour__2C3393D0" Association="Self.FK__Lessons__id_cour__2C3393D0">
+          <AssociationSet Name="FK__Lessons__id_cour__2B3F6F97" Association="Self.FK__Lessons__id_cour__2B3F6F97">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Lessons" EntitySet="Lessons" />
           </AssociationSet>
-          <AssociationSet Name="FK__Lessons__id_user__2B3F6F97" Association="Self.FK__Lessons__id_user__2B3F6F97">
+          <AssociationSet Name="FK__Lessons__id_user__2A4B4B5E" Association="Self.FK__Lessons__id_user__2A4B4B5E">
             <End Role="Users" EntitySet="Users" />
             <End Role="Lessons" EntitySet="Lessons" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pay__id_user__35BCFE0A" Association="Self.FK__Pay__id_user__35BCFE0A">
+          <AssociationSet Name="FK__Pay__id_user__34C8D9D1" Association="Self.FK__Pay__id_user__34C8D9D1">
             <End Role="Users" EntitySet="Users" />
             <End Role="Pay" EntitySet="Pay" />
           </AssociationSet>
-          <AssociationSet Name="FK__Services__id_use__2F10007B" Association="Self.FK__Services__id_use__2F10007B">
+          <AssociationSet Name="FK__Services__id_use__2E1BDC42" Association="Self.FK__Services__id_use__2E1BDC42">
             <End Role="Users" EntitySet="Users" />
             <End Role="Services" EntitySet="Services" />
           </AssociationSet>
@@ -269,8 +270,8 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SpaceCourseDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Certificate">
+      <Schema Namespace="SPACECOURSE_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cerf">
           <Key>
             <PropertyRef Name="id_cer" />
           </Key>
@@ -278,10 +279,10 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           <Property Name="ngaycap" Type="DateTime" Precision="0" />
           <Property Name="id_user" Type="Int32" />
           <Property Name="id_lesson" Type="Int32" />
-          <NavigationProperty Name="Lesson" Relationship="Self.FK__Certifica__id_le__398D8EEE" FromRole="Certificate" ToRole="Lessons" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Certifica__id_us__38996AB5" FromRole="Certificate" ToRole="Users" />
+          <NavigationProperty Name="Lessons" Relationship="Self.FK__Cerf__id_lesson__38996AB5" FromRole="Cerf" ToRole="Lessons" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Cerf__id_user__37A5467C" FromRole="Cerf" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Cours">
+        <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="id_course" />
           </Key>
@@ -293,9 +294,9 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           <Property Name="description" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
           <Property Name="img_course" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
           <Property Name="accent_color" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Courses__subscri__286302EC" FromRole="Courses" ToRole="Users" />
-          <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__id_cou__32E0915F" FromRole="Courses" ToRole="Feedback" />
-          <NavigationProperty Name="Lessons" Relationship="Self.FK__Lessons__id_cour__2C3393D0" FromRole="Courses" ToRole="Lessons" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Courses__subscri__276EDEB3" FromRole="Courses" ToRole="Users" />
+          <NavigationProperty Name="Feedback" Relationship="Self.FK__Feedback__id_cou__31EC6D26" FromRole="Courses" ToRole="Feedback" />
+          <NavigationProperty Name="Lessons" Relationship="Self.FK__Lessons__id_cour__2B3F6F97" FromRole="Courses" ToRole="Lessons" />
         </EntityType>
         <EntityType Name="Feedback">
           <Key>
@@ -306,10 +307,10 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           <Property Name="id_course" Type="Int32" />
           <Property Name="content" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="id_user" Type="Int32" />
-          <NavigationProperty Name="Cours" Relationship="Self.FK__Feedback__id_cou__32E0915F" FromRole="Feedback" ToRole="Courses" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Feedback__id_use__31EC6D26" FromRole="Feedback" ToRole="Users" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK__Feedback__id_cou__31EC6D26" FromRole="Feedback" ToRole="Courses" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Feedback__id_use__30F848ED" FromRole="Feedback" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Lesson">
+        <EntityType Name="Lessons">
           <Key>
             <PropertyRef Name="id_lesson" />
           </Key>
@@ -320,9 +321,9 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           <Property Name="description" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="video_lesson" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
           <Property Name="id_course" Type="Int32" />
-          <NavigationProperty Name="Certificates" Relationship="Self.FK__Certifica__id_le__398D8EEE" FromRole="Lessons" ToRole="Certificate" />
-          <NavigationProperty Name="Cours" Relationship="Self.FK__Lessons__id_cour__2C3393D0" FromRole="Lessons" ToRole="Courses" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Lessons__id_user__2B3F6F97" FromRole="Lessons" ToRole="Users" />
+          <NavigationProperty Name="Cerf" Relationship="Self.FK__Cerf__id_lesson__38996AB5" FromRole="Lessons" ToRole="Cerf" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK__Lessons__id_cour__2B3F6F97" FromRole="Lessons" ToRole="Courses" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Lessons__id_user__2A4B4B5E" FromRole="Lessons" ToRole="Users" />
         </EntityType>
         <EntityType Name="Pay">
           <Key>
@@ -336,9 +337,9 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           <Property Name="sothe" Type="Int32" />
           <Property Name="madv" Type="Int32" />
           <Property Name="id_user" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Pay__id_user__35BCFE0A" FromRole="Pay" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Pay__id_user__34C8D9D1" FromRole="Pay" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Service">
+        <EntityType Name="Services">
           <Key>
             <PropertyRef Name="id_service" />
           </Key>
@@ -347,9 +348,9 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           <Property Name="type_service" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="id_user" Type="Int32" />
           <Property Name="price" Type="Double" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Services__id_use__2F10007B" FromRole="Services" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Services__id_use__2E1BDC42" FromRole="Services" ToRole="Users" />
         </EntityType>
-        <EntityType Name="User">
+        <EntityType Name="Users">
           <Key>
             <PropertyRef Name="id_user" />
           </Key>
@@ -359,48 +360,49 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
           <Property Name="sdt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="emai" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="user_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Certificates" Relationship="Self.FK__Certifica__id_us__38996AB5" FromRole="Users" ToRole="Certificate" />
-          <NavigationProperty Name="Courses" Relationship="Self.FK__Courses__subscri__286302EC" FromRole="Users" ToRole="Courses" />
-          <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__id_use__31EC6D26" FromRole="Users" ToRole="Feedback" />
-          <NavigationProperty Name="Lessons" Relationship="Self.FK__Lessons__id_user__2B3F6F97" FromRole="Users" ToRole="Lessons" />
-          <NavigationProperty Name="Pays" Relationship="Self.FK__Pay__id_user__35BCFE0A" FromRole="Users" ToRole="Pay" />
-          <NavigationProperty Name="Services" Relationship="Self.FK__Services__id_use__2F10007B" FromRole="Users" ToRole="Services" />
-          <NavigationProperty Name="AdminUser" Relationship="Self.FK__AdminUser__id_ad__25869641" FromRole="Users" ToRole="AdminUser" />
+          <Property Name="profile_pic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cerf" Relationship="Self.FK__Cerf__id_user__37A5467C" FromRole="Users" ToRole="Cerf" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK__Courses__subscri__276EDEB3" FromRole="Users" ToRole="Courses" />
+          <NavigationProperty Name="Feedback" Relationship="Self.FK__Feedback__id_use__30F848ED" FromRole="Users" ToRole="Feedback" />
+          <NavigationProperty Name="Lessons" Relationship="Self.FK__Lessons__id_user__2A4B4B5E" FromRole="Users" ToRole="Lessons" />
+          <NavigationProperty Name="Pay" Relationship="Self.FK__Pay__id_user__34C8D9D1" FromRole="Users" ToRole="Pay" />
+          <NavigationProperty Name="Services" Relationship="Self.FK__Services__id_use__2E1BDC42" FromRole="Users" ToRole="Services" />
+          <NavigationProperty Name="AdminUser" Relationship="Self.FK__AdminUser__id_ad__24927208" FromRole="Users" ToRole="AdminUser" />
         </EntityType>
         <EntityType Name="AdminUser">
           <Key>
             <PropertyRef Name="id_admin" />
           </Key>
           <Property Name="id_admin" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK__AdminUser__id_ad__25869641" FromRole="AdminUser" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__AdminUser__id_ad__24927208" FromRole="AdminUser" ToRole="Users" />
         </EntityType>
-        <Association Name="FK__Certifica__id_le__398D8EEE">
-          <End Role="Lessons" Type="Self.Lesson" Multiplicity="0..1" />
-          <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+        <Association Name="FK__Cerf__id_lesson__38996AB5">
+          <End Role="Lessons" Type="Self.Lessons" Multiplicity="0..1" />
+          <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lessons">
               <PropertyRef Name="id_lesson" />
             </Principal>
-            <Dependent Role="Certificate">
+            <Dependent Role="Cerf">
               <PropertyRef Name="id_lesson" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Certifica__id_us__38996AB5">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+        <Association Name="FK__Cerf__id_user__37A5467C">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Cerf" Type="Self.Cerf" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="id_user" />
             </Principal>
-            <Dependent Role="Certificate">
+            <Dependent Role="Cerf">
               <PropertyRef Name="id_user" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Courses__subscri__286302EC">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+        <Association Name="FK__Courses__subscri__276EDEB3">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="id_user" />
@@ -410,8 +412,8 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Feedback__id_cou__32E0915F">
-          <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
+        <Association Name="FK__Feedback__id_cou__31EC6D26">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
@@ -422,9 +424,9 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Lessons__id_cour__2C3393D0">
-          <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
-          <End Role="Lessons" Type="Self.Lesson" Multiplicity="*" />
+        <Association Name="FK__Lessons__id_cour__2B3F6F97">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+          <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
               <PropertyRef Name="id_course" />
@@ -434,8 +436,8 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Feedback__id_use__31EC6D26">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+        <Association Name="FK__Feedback__id_use__30F848ED">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -446,9 +448,9 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Lessons__id_user__2B3F6F97">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Lessons" Type="Self.Lesson" Multiplicity="*" />
+        <Association Name="FK__Lessons__id_user__2A4B4B5E">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Lessons" Type="Self.Lessons" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="id_user" />
@@ -458,8 +460,8 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pay__id_user__35BCFE0A">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+        <Association Name="FK__Pay__id_user__34C8D9D1">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Pay" Type="Self.Pay" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -470,9 +472,9 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Services__id_use__2F10007B">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Services" Type="Self.Service" Multiplicity="*" />
+        <Association Name="FK__Services__id_use__2E1BDC42">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Services" Type="Self.Services" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="id_user" />
@@ -482,8 +484,8 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__AdminUser__id_ad__25869641">
-          <End Role="Users" Type="Self.User" Multiplicity="1" />
+        <Association Name="FK__AdminUser__id_ad__24927208">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -494,54 +496,54 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SpaceCourseDB" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Certificates" EntityType="Self.Certificate" />
-          <EntitySet Name="Courses" EntityType="Self.Cours" />
-          <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
-          <EntitySet Name="Lessons" EntityType="Self.Lesson" />
-          <EntitySet Name="Pays" EntityType="Self.Pay" />
-          <EntitySet Name="Services" EntityType="Self.Service" />
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="AdminUsers" EntityType="Self.AdminUser" />
-          <AssociationSet Name="FK__Certifica__id_le__398D8EEE" Association="Self.FK__Certifica__id_le__398D8EEE">
+        <EntityContainer Name="SPACECOURSE_DBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cerf" EntityType="Self.Cerf" />
+          <EntitySet Name="Courses" EntityType="Self.Courses" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" />
+          <EntitySet Name="Lessons" EntityType="Self.Lessons" />
+          <EntitySet Name="Pay" EntityType="Self.Pay" />
+          <EntitySet Name="Services" EntityType="Self.Services" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="AdminUser" EntityType="Self.AdminUser" />
+          <AssociationSet Name="FK__Cerf__id_lesson__38996AB5" Association="Self.FK__Cerf__id_lesson__38996AB5">
             <End Role="Lessons" EntitySet="Lessons" />
-            <End Role="Certificate" EntitySet="Certificates" />
+            <End Role="Cerf" EntitySet="Cerf" />
           </AssociationSet>
-          <AssociationSet Name="FK__Certifica__id_us__38996AB5" Association="Self.FK__Certifica__id_us__38996AB5">
+          <AssociationSet Name="FK__Cerf__id_user__37A5467C" Association="Self.FK__Cerf__id_user__37A5467C">
             <End Role="Users" EntitySet="Users" />
-            <End Role="Certificate" EntitySet="Certificates" />
+            <End Role="Cerf" EntitySet="Cerf" />
           </AssociationSet>
-          <AssociationSet Name="FK__Courses__subscri__286302EC" Association="Self.FK__Courses__subscri__286302EC">
+          <AssociationSet Name="FK__Courses__subscri__276EDEB3" Association="Self.FK__Courses__subscri__276EDEB3">
             <End Role="Users" EntitySet="Users" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Feedback__id_cou__32E0915F" Association="Self.FK__Feedback__id_cou__32E0915F">
+          <AssociationSet Name="FK__Feedback__id_cou__31EC6D26" Association="Self.FK__Feedback__id_cou__31EC6D26">
             <End Role="Courses" EntitySet="Courses" />
-            <End Role="Feedback" EntitySet="Feedbacks" />
+            <End Role="Feedback" EntitySet="Feedback" />
           </AssociationSet>
-          <AssociationSet Name="FK__Lessons__id_cour__2C3393D0" Association="Self.FK__Lessons__id_cour__2C3393D0">
+          <AssociationSet Name="FK__Lessons__id_cour__2B3F6F97" Association="Self.FK__Lessons__id_cour__2B3F6F97">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Lessons" EntitySet="Lessons" />
           </AssociationSet>
-          <AssociationSet Name="FK__Feedback__id_use__31EC6D26" Association="Self.FK__Feedback__id_use__31EC6D26">
+          <AssociationSet Name="FK__Feedback__id_use__30F848ED" Association="Self.FK__Feedback__id_use__30F848ED">
             <End Role="Users" EntitySet="Users" />
-            <End Role="Feedback" EntitySet="Feedbacks" />
+            <End Role="Feedback" EntitySet="Feedback" />
           </AssociationSet>
-          <AssociationSet Name="FK__Lessons__id_user__2B3F6F97" Association="Self.FK__Lessons__id_user__2B3F6F97">
+          <AssociationSet Name="FK__Lessons__id_user__2A4B4B5E" Association="Self.FK__Lessons__id_user__2A4B4B5E">
             <End Role="Users" EntitySet="Users" />
             <End Role="Lessons" EntitySet="Lessons" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pay__id_user__35BCFE0A" Association="Self.FK__Pay__id_user__35BCFE0A">
+          <AssociationSet Name="FK__Pay__id_user__34C8D9D1" Association="Self.FK__Pay__id_user__34C8D9D1">
             <End Role="Users" EntitySet="Users" />
-            <End Role="Pay" EntitySet="Pays" />
+            <End Role="Pay" EntitySet="Pay" />
           </AssociationSet>
-          <AssociationSet Name="FK__Services__id_use__2F10007B" Association="Self.FK__Services__id_use__2F10007B">
+          <AssociationSet Name="FK__Services__id_use__2E1BDC42" Association="Self.FK__Services__id_use__2E1BDC42">
             <End Role="Users" EntitySet="Users" />
             <End Role="Services" EntitySet="Services" />
           </AssociationSet>
-          <AssociationSet Name="FK__AdminUser__id_ad__25869641" Association="Self.FK__AdminUser__id_ad__25869641">
+          <AssociationSet Name="FK__AdminUser__id_ad__24927208" Association="Self.FK__AdminUser__id_ad__24927208">
             <End Role="Users" EntitySet="Users" />
-            <End Role="AdminUser" EntitySet="AdminUsers" />
+            <End Role="AdminUser" EntitySet="AdminUser" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -549,10 +551,10 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SpaceCourseDBModelStoreContainer" CdmEntityContainer="SpaceCourseDB">
-          <EntitySetMapping Name="Certificates">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.Certificate">
-              <MappingFragment StoreEntitySet="Certificate">
+        <EntityContainerMapping StorageEntityContainer="SPACECOURSE_DBModelStoreContainer" CdmEntityContainer="SPACECOURSE_DBEntities1">
+          <EntitySetMapping Name="Cerf">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.Cerf">
+              <MappingFragment StoreEntitySet="Cerf">
                 <ScalarProperty Name="id_cer" ColumnName="id_cer" />
                 <ScalarProperty Name="ngaycap" ColumnName="ngaycap" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
@@ -561,7 +563,7 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.Cours">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.Courses">
               <MappingFragment StoreEntitySet="Courses">
                 <ScalarProperty Name="id_course" ColumnName="id_course" />
                 <ScalarProperty Name="subscriber_user" ColumnName="subscriber_user" />
@@ -574,8 +576,8 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Feedbacks">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.Feedback">
+          <EntitySetMapping Name="Feedback">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.Feedback">
               <MappingFragment StoreEntitySet="Feedback">
                 <ScalarProperty Name="id_feedback" ColumnName="id_feedback" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -586,7 +588,7 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Lessons">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.Lesson">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.Lessons">
               <MappingFragment StoreEntitySet="Lessons">
                 <ScalarProperty Name="id_lesson" ColumnName="id_lesson" />
                 <ScalarProperty Name="process" ColumnName="process" />
@@ -598,8 +600,8 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Pays">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.Pay">
+          <EntitySetMapping Name="Pay">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.Pay">
               <MappingFragment StoreEntitySet="Pay">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="loaithe" ColumnName="loaithe" />
@@ -613,7 +615,7 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Services">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.Service">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.Services">
               <MappingFragment StoreEntitySet="Services">
                 <ScalarProperty Name="id_service" ColumnName="id_service" />
                 <ScalarProperty Name="date_regis" ColumnName="date_regis" />
@@ -624,7 +626,7 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.User">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
                 <ScalarProperty Name="name_user" ColumnName="name_user" />
@@ -632,11 +634,12 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
                 <ScalarProperty Name="sdt" ColumnName="sdt" />
                 <ScalarProperty Name="emai" ColumnName="emai" />
                 <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AdminUsers">
-            <EntityTypeMapping TypeName="SpaceCourseDBModel.AdminUser">
+          <EntitySetMapping Name="AdminUser">
+            <EntityTypeMapping TypeName="SPACECOURSE_DBModel.AdminUser">
               <MappingFragment StoreEntitySet="AdminUser">
                 <ScalarProperty Name="id_admin" ColumnName="id_admin" />
               </MappingFragment>
@@ -656,7 +659,7 @@ FROM [dbo].[AdminUser] AS [AdminUser]</DefiningQuery>
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -16,6 +16,6 @@ namespace SpaceCourse.Models
     {
         public int id_admin { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

@@ -12,14 +12,14 @@ namespace SpaceCourse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Service
+    public partial class Cerf
     {
-        public int id_service { get; set; }
-        public Nullable<System.DateTime> date_regis { get; set; }
-        public string type_service { get; set; }
+        public int id_cer { get; set; }
+        public Nullable<System.DateTime> ngaycap { get; set; }
         public Nullable<int> id_user { get; set; }
-        public Nullable<double> price { get; set; }
+        public Nullable<int> id_lesson { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual Lessons Lessons { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

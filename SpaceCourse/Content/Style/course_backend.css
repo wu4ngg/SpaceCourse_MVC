@@ -80,7 +80,7 @@
     width: 165px;
     height: 100px;
     opacity: 0.8;
-    animation-timing-function: linear;
+    transition: linear 0.2s;
     cursor: pointer;
 }
 
@@ -91,10 +91,10 @@
 .course-rocket {
     animation: showLogin 0.5s;
     transition: ease-in-out 0.3s;
-    display: block;
     width: 25px;
     height: 25px;
     margin: -25px;
+    display: none;
 }
 
     .course-rocket img {
@@ -349,7 +349,10 @@
         transform: scale(100%);
     }
 }
-
+.wrap-course:hover {
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.548);
+}
 /* Responsive màn hình?? */
 @media only screen and (max-width: 20000px) {
     #planet2 p {

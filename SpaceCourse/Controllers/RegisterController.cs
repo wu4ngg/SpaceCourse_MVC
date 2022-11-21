@@ -8,18 +8,18 @@ namespace SpaceCourse.Controllers
 {
     public class RegisterController : Controller
     {
-        SpaceCourseDB db = new SpaceCourseDB();   
+       SPACECOURSE_DBEntities1 db = new SPACECOURSE_DBEntities1();
         // GET: Register
         public ActionResult Main()
         {
             return View();
         }
-        public ActionResult Complete(User _user)
+        public ActionResult Complete(Users _user)
         {
             return View(_user);
         }
         [HttpPost]
-        public ActionResult Main(User _user)
+        public ActionResult Main(Users _user)
         {
             if (ModelState.IsValid)
             {
