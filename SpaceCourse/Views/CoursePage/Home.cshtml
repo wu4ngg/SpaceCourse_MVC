@@ -1,17 +1,17 @@
-﻿@model SpaceCourse.Models.Courses
+﻿@model SpaceCourse.Models.Cours
 
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_LayoutNoFooter.cshtml";
 }
-<link href="~/content/style/coursepage.css" rel="stylesheet" />
-<style>
 
-.info_content_btn {
+<link href="~/Content/Style/coursepage.css" rel="stylesheet" />
+<style>
+    .info_content_btn {
         outline: 4px @Model.accent_color solid !important;
         box-shadow: 0 4px 24px @Model.accent_color !important;
     }
-    .body-page {
+    body {
         background: linear-gradient(180.61deg, @(Model.accent_color)6b -6.97%, rgba(254, 181, 114, 0) 99.47%), #FFFFFF;
     }
     .info_HocLai_btn{
@@ -22,7 +22,6 @@
         background-color: @Model.accent_color;
                 box-shadow: 0 4px 24px @Model.accent_color !important;
     }
-
 </style>
 <div class="body-page">
     <!-- infor -->
@@ -30,14 +29,14 @@
         <div class=" page_info_img">
             <img src="@Url.Content(Model.img_course)" alt="">
             <div class="stack-head_header">
-                <h1>@Model.name_course</h1>
-                <span>@Model.description</span>
+                <h1>@Html.DisplayFor(m => m.name_course)</h1>
+                <span>Co ban</span>
             </div>
             <div class="test_wrap-bar">
-                <div class="test_wrap-inner" style="width: 55%"></div>
+                <div class="test_wrap-inner" style="width: @Model.process%"></div>
             </div>
             <div class="perc">
-                <p>@Model.process%</p>
+                <p>@Html.DisplayFor(m => m.process)%</p>
             </div>
             <div class="page_info_content">
                 <input type="button" class="info_content_btn" value="Tiếp tục">
@@ -45,10 +44,19 @@
         </div>
         <div class="content-wrapper">
             <div class="info_wrapper">
-                <div class="page_info_content">
+                @if (Session["ID"] == null)
+                {
+
+
+<div class="page_info_content">
                     <input type="button" class="info_content_btn" value="Theo dõi">
                     <div></div>
                 </div>
+                }
+                else
+                {
+                    @Html.Action("FollowButton", "CoursePage", new { id = ViewBag.Id, user = int.Parse(Session["ID"].ToString()) });
+                }
                 <div class="page-info_wrap">
                     <div class="page_info page_info_follow"><span><b>Lượt theo dõi</b></span></div>
                     <div class="page_info page_info_view"><span> Lượt xem <b> 594.391 </b> </span></div>
@@ -56,12 +64,11 @@
                     <div class="page_info page_info_time"><span>Tổng số giờ :<b> 194 H</b></span></div>
                 </div>
             </div>
-            <div class="page_stack-test">
-                @Html.Action("Lesson", "CoursePage", new { id = ViewBag.id })
-            </div>
+            @Html.Action("Lessions", "CoursePage", new {id = 
+ViewBag.Id})
             <div class="desc">
-                <h3>Javascript là gì?</h3>
-                <p>JavaScript, theo phiên bản hiện hành, là một ngôn ngữ lập trình thông dịch được phát triển từ các ý niệm nguyên mẫu. Ngôn ngữ này được dùng rộng rãi cho các trang web (phía người dùng) cũng như phía máy chủ (với Nodejs). Nó vốn được phát triển bởi Brendan Eich tại Hãng truyền thông Netscape với cái tên đầu tiên Mocha, rồi sau đó đổi tên thành LiveScript, và cuối cùng thành JavaScript. Giống Java, JavaScript có cú pháp tương tự C, nhưng nó gần với Self hơn Java. .js là phần mở rộng thường được dùng cho tập tin mã nguồn JavaScript.</p>
+                <h3>Giới thiệu</h3>
+                <p>@Model.description</p>
                 <h3>Bạn sẽ học được những gì từ khóa học này?</h3>
                 <ul>
                     <li>Nguyên lý hoạt động cơ bản của Javascript</li>
@@ -87,5 +94,3 @@
 
     </div>
 </div>
-<script src="~/Content/script/main.js"></script>
-<script src="~/Content/script/info.js"></script>

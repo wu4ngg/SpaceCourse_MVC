@@ -12,7 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="~/Content/Style/videocourse.css" rel="stylesheet" />
     <link href="~/Content/Style/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .user-info_main{
+            z-index : 3;
+        }
+    </style>
 </head>
 <body>
     <div id="head">
@@ -29,21 +36,35 @@
             <div class="header-logo">
                 <div id="logo" class="header-item"><img width="100" src="~/Content/img/favicon.png" alt=""></div>
             </div>
-            <div class="header-item" id="entry  mainPage"><a href="/">Trang Chủ</a></div>
-            <div id="entry mainForum" class="header-item "><a href="/Forum/Home">Diễn Đàn</a></div>
-            <div id="entry mainCourse" class="header-item"><a href="/Courses/FrontEnd">Khóa Học</a></div>
-            <div id="entry mainService" class="header-item"><a href="/Service/Service">Dịch Vụ</a></div>
+            <div class="header-item" id="entry"><a href="/">Trang Chủ</a></div>
+            <div id="entry" class="header-item"><a href="/Forum/Home">Diễn Đàn</a></div>
+            <div id="entry" class="header-item"><a href="/Courses/FrontEnd">Khóa Học</a></div>
+            <div id="entry" class="header-item"><a href="/Service/Index">Dịch Vụ</a></div>
             <div id="login-area" class="header-item">
                 <div id="search" class="header-item" onclick="makevisible()">
                     <div class="search_icon">
                         <span class="material-symbols-outlined" id="icon">search</span>
                     </div>
                 </div>
-                <div id="login" class="header-item lo" onclick="window.location.href = '/Login/Main'">Đăng nhập</div>
-                <div id="register" class="header-item lo" onclick="window.location.href = '/Register/Main'">Đăng ký</div>
+                @if (Session["ID"] == null)
+                {
+                    <div id="login" class="header-item lo" onclick="window.location.href = '/Login/Main'">Đăng nhập</div>
+                    <div id="register" class="header-item lo" onclick="window.location.href = '/Register/Main'">Đăng ký</div>
+                }
+                else
+                {
+                    @Html.Action("UserArea", "User", new { id = int.Parse(Session["ID"].ToString()) })
+                }
             </div>
         </div>
     </div>
+    @if (Session["ID"] != null)
+    {
+        @Html.Action("UserMenu", "User", new { id = int.Parse(Session["ID"].ToString()) })
+    }
+
+
+
     <div class="register-main" id="register1">
         <div class="register-wrap">
             <div class="wrap-left">
@@ -303,5 +324,6 @@
         </div>
     </div>
     <script src="~/Content/script/main.js"></script>
+<script src="~/Content/script/info.js"></script>
 </body>
 </html>
