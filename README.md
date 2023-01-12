@@ -5,5 +5,5 @@ Tiến trình hiện tại: Đưa source vào MVC
 Mục tiêu: Hoàn thành cơ sơ dữ liệu + tính năng
 [-------------- ] 95%
 
-10đ nha cô ;))
+Ko đc 10 rồi :"((
 ```
